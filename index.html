@@ -75,10 +75,8 @@
           <li><a class="nav-link scrollto" href="#leaderboard">Leaderboard</a></li>
           <!--<li><a class="nav-link scrollto" href="./submission.html">Submission</a></li>-->
           <li>
-            <a class="nav-link scrollto">
-              <button class="btn-get-started btn rulesBtn" type="button" aria-disabled="true" title="Rules are TBD"
-                style="cursor: not-allowed;">Rules [TBD]</button>
-            </a>
+            <button class="btn-get-started btn rulesBtn" type="button" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop" title="Challenge rules">Rules</button>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -687,22 +685,34 @@
     <section id="license" class="license">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2 class="font-weight-bold" style="font-size: 28px;">License</h2>
+          <h2 class="font-weight-bold" style="font-size: 28px;">Data License</h2>
         </div>
 
-        <div class="content" style="text-align: justify; font-size: 16px;">
+        <div class="content" style="text-align: justify; font-size: 16px; line-height: 1.65;">
           <p>
-            The SmartGlasses dataset is available for academic research. The following conditions require your
-            compliance:
+            By downloading or using the SmartGlasses dataset, you agree to the following terms:
           </p>
-          <ul style="list-style-type: decimal; padding-left: 20px;">
-            <li>References to the SmartGlasses dataset need to be included in any work using the dataset.</li>
-            <li>For the baseline research paper, please cite the paper listed on our website.</li>
-            <li>You may not use the SmartGlasses dataset or any derivative works for other purposes.</li>
-          </ul>
-          <p>
-            All rights not expressly granted to you are reserved by the organizers of this challenge.
-          </p>
+          <ol style="padding-left: 24px; margin-bottom: 0;">
+            <li class="mb-3">
+              <strong>Academic &amp; Non-commercial Use Only:</strong> The dataset is strictly licensed for the IEEE
+              SLT 2026 SmartGlasses Challenge and related academic research. Any commercial use or product development is
+              strictly prohibited.
+            </li>
+            <li class="mb-3">
+              <strong>No Distribution:</strong> The dataset is restricted to officially registered teams. You must not
+              publish, share, or distribute the data (or any subsets) to unregistered third parties.
+            </li>
+            <li class="mb-3">
+              <strong>Mandatory Citation:</strong> Any publications, reports, or projects utilizing this data must cite
+              the official challenge website. Once the organizing committee publishes the official Overview Paper,
+              citing it becomes mandatory for all subsequent works.
+            </li>
+            <li>
+              <strong>Copyright &amp; Disclaimer:</strong> All intellectual property rights belong to the organizing
+              committee. The dataset is provided &quot;as is&quot;, and the committee bears no liability for any
+              consequences arising from its use.
+            </li>
+          </ol>
         </div>
       </div>
     </section>
@@ -905,79 +915,69 @@
   <script src="assets/js/main.js"></script>
 </body>
 
-<!-- Rules & Regulation Modal -->
-<div class="modal fade modal-lg" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<!-- Challenge Rules Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header" style="text-align: center;">
+      <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel"
-          style="font-family: Open Sans, sans-serif; font-weight: bold;">Rules & Regulations</h1>
+          style="font-family: Open Sans, sans-serif; font-weight: bold;">Challenge Rules</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="about modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="content px-3">
-          <ul>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>Participants are allowed to submit predictions up to five times for each
-              track, but only the most recent submission will be considered.
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>Participants have full flexibility in partitioning the MM-AAD dataset
-              for training and processing.
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>However, test data must only be used for generating predictions and
-              cannot be utilized for training. All parameter tuning should be conducted exclusively on the training set.
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>The use of external data (both training data and/or pretrained models)
-              is allowed, if all conditions are met:
-              <ul>
-                <li>The datasets, or pretrained models, are publicly and freely available.</li>
-                <li>Datasets/pretrained models must be available before the start of this challenge.</li>
-                <li>Datasets/model weights used to generate predictions must be cited in the final description and in
-                  the final paper.</li>
-                <li>Public pretrained models, trained on private data can be used only after the approval of the
-                  organizers.</li>
-              </ul>
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>To ensure fairness and integrity, all participants must strictly adhere
-              to the organizers' guidelines and meet the deadlines set for each stage of the competition.
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>If exceptional circumstances prevent compliance with the schedule,
-              participants must provide a formal explanation via email.
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>The organizers reserve the right to interpret the evaluation rules,
-              adjust rankings, or disqualify teams that fail to comply.
-            </li>
-            <li class="my-1">
-              <i class="bx bx-check-double"></i>The organizers of the challenge reserve the right to interpret, modify,
-              and amend the participation terms and challenge rules.
+      <div class="modal-body">
+        <div class="content px-1" style="font-family: Open Sans, sans-serif; text-align: left;">
+          <p class="mb-4" style="line-height: 1.65;">
+            All participating teams must strictly adhere to the following rules. The organizing committee reserves the
+            right of final interpretation and the right to disqualify any violating teams.
+          </p>
+
+          <h2 class="h5 fw-bold" style="color: #1f4385;">1.1 Model Constraints</h2>
+          <ul class="mb-4">
+            <li class="mb-0" style="line-height: 1.65;">
+              <strong>One unified system per track:</strong> Teams must submit a single, unified model pipeline for each
+              track. Submitting an ensemble of completely different sub-models patched together with manually
+              hard-coded scripts (e.g., if-else rules) is strictly prohibited.
             </li>
           </ul>
 
-          <!-- Rules for Ranking -->
-          <div style="color: red; margin-top: 20px;">
-            <h4 style="font-weight: bold;">Rules for ranking</h4>
-            <ul>
-              <li class="my-1">
-                <i class="bx bx-check-double"></i>The participants may submit entries for one or both tasks, but only
-                the most recent submission for each task will be used for scoring.
-              </li>
-              <li class="my-1">
-                <i class="bx bx-check-double"></i>The top three teams in each track will receive a certificate and be
-                invited to submit a paper.
-              </li>
-              <li class="my-1">
-                <i class="bx bx-check-double"></i>Participants are encouraged to communicate with the organizers via
-                email for any questions or clarifications.
-              </li>
-            </ul>
-          </div>
+          <h2 class="h5 fw-bold" style="color: #1f4385;">1.2 Data &amp; Pre-trained Models</h2>
+          <ul class="mb-4">
+            <li class="mb-2" style="line-height: 1.65;">
+              <strong>Official Data:</strong> Teams must use the official SmartGlasses dataset for training and
+              evaluation.
+            </li>
+            <li class="mb-2" style="line-height: 1.65;">
+              <strong>External Data:</strong> Only completely open-source, free, and publicly accessible datasets (e.g.,
+              LibriSpeech) are allowed. Private or closed-source data is strictly prohibited.
+            </li>
+            <li class="mb-2" style="line-height: 1.65;">
+              <strong>Pre-trained Models:</strong> Open-source pre-trained models (e.g., Whisper, LLaMA, Qwen) are
+              permitted, provided their weights are publicly downloadable.
+            </li>
+            <li class="mb-2" style="line-height: 1.65;">
+              <strong>Data Augmentation:</strong> Acoustic augmentation, data synthesis, and multi-modal generation are
+              permitted (e.g., TTS for overlapped speech, open-source LLMs for expanding CoT trajectories). All
+              auxiliary tools/materials must be open-source and approved for academic use.
+            </li>
+            <li class="mb-0" style="line-height: 1.65;">
+              <strong>Mandatory Disclosure:</strong> All external data, pre-trained models, and augmentation strategies
+              must be explicitly detailed in the System Description Paper.
+            </li>
+          </ul>
+
+          <h2 class="h5 fw-bold" style="color: #1f4385;">1.3 Paper &amp; Reproducibility</h2>
+          <ul class="mb-0">
+            <li class="mb-2" style="line-height: 1.65;">
+              <strong>System Description Paper:</strong> A paper detailing the methodology and data usage is required to be
+              eligible for final rankings, awards, and SLT 2026 presentations.
+            </li>
+            <li class="mb-0" style="line-height: 1.65;">
+              <strong>Code open source &amp; verification:</strong> Winning teams are strongly encouraged to open-source
+              their code and weights. The committee reserves the right to request model files and inference code from
+              top-ranking teams for reproducibility verification.
+            </li>
+          </ul>
         </div>
       </div>
       <div class="modal-footer">

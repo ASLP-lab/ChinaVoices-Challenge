@@ -152,6 +152,21 @@
   }, true)
 
   /**
+   * Close mobile navbar when opening Rules modal
+   */
+  on('click', '#navbar .rulesBtn[data-bs-target="#staticBackdrop"]', function() {
+    let navbar = select('#navbar')
+    if (navbar && navbar.classList.contains('navbar-mobile')) {
+      navbar.classList.remove('navbar-mobile')
+      let navbarToggle = select('.mobile-nav-toggle')
+      if (navbarToggle) {
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+    }
+  }, true)
+
+  /**
    * Scroll with ofset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
