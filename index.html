@@ -1037,8 +1037,8 @@
           <h2 class="font-weight-bold" style="font-size: 36px; color: #1f4385;">Organizers</h2>
         </div>
 
-        <!-- 每行最多显示 6 人，无卡片样式，仅文本 -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-4 justify-content-center">
+        <!-- 每行最多显示 7 人，无卡片样式，仅文本 -->
+        <div class="row row-cols-1 row-cols-sm-2 organizers-row g-4 justify-content-center">
 
           <!-- Lei Xie -->
           <div class="col text-center" data-aos="zoom-in" data-aos-delay="100">
@@ -1163,7 +1163,26 @@
             </div>
           </div>
 
-          <!-- Yujie Liao -->
+
+          <!-- Yuhang Dai -->
+          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
+            <div style="line-height: 1.4;">
+              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Yuhang Dai</h4>
+              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
+                China</span>
+            </div>
+          </div>
+
+          <!-- Zhennan Lin -->
+          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
+            <div style="line-height: 1.4;">
+              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Zhennan Lin</h4>
+              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
+                China</span>
+            </div>
+          </div>
+
+         <!-- Yujie Liao -->
           <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
             <div style="line-height: 1.4;">
               <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Yujie Liao</h4>
@@ -1177,6 +1196,15 @@
       </div>
     </section>
     <!-- End Organizers Section -->
+
+    <style>
+      @media (min-width: 768px) {
+        .organizers-row > .col {
+          flex: 0 0 calc(100% / 7);
+          max-width: calc(100% / 7);
+        }
+      }
+    </style>
 
 
 
