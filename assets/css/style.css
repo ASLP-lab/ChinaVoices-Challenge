@@ -1190,7 +1190,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 60px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background: #1f4385;
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -2134,7 +2134,7 @@ blockquote {
   }
 
 /* -------------------------------------------------------------
-   Premium polish + micro interactions (SmartGlasses)
+   Premium polish + micro interactions
 -------------------------------------------------------------- */
 
 #header.fixed-top {
