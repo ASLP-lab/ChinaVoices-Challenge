@@ -1,1485 +1,852 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>SmartGlasses 2026 | Home</title>
-  <meta content="" name="description" />
-  <meta content="" name="keywords" />
+  <title>SinoVoices Challenge 2026 | 中文多方言语音识别挑战赛</title>
+  <meta content="SinoVoices Challenge 2026 中文多方言语音识别挑战赛，面向方言识别与中文多方言语音识别的公开评测平台。" name="description" />
+  <meta content="SinoVoices, 中文方言, 语音识别, 方言识别, NCMMSC 2026" name="keywords" />
 
-  <!-- Favicons -->
-  <link href="assets/img/slt1.jpg" rel="icon" />
-  <link href="./assets/img/slt1.jpg" rel="apple-touch-icon" />
-  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
-
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet" />
-
-  <!-- Vendor CSS Files -->
+  <link href="assets/img/sinovoices-logo.png" rel="icon" />
+  <link href="./assets/img/sinovoices-logo.png" rel="apple-touch-icon" />
   <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
 
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --sv-blue: #1f4385;
+      --sv-deep: #10234a;
+      --sv-ink: #14213d;
+      --sv-muted: #5f6f89;
+      --sv-soft: #f6f8fc;
+      --sv-line: rgba(31, 67, 133, 0.12);
+    }
+
+    body {
+      font-family: "Noto Sans SC", "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #26344d;
+      background: #f7f9fd;
+      font-size: 17px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Noto Sans SC", "Montserrat", sans-serif;
+      letter-spacing: 0;
+    }
+
+    #hero {
+      background: url("assets/img/sinovoices-hero.png") center center / cover no-repeat;
+      min-height: 92vh;
+    }
+
+    #hero::before {
+      background:
+        linear-gradient(90deg, rgba(5, 13, 31, 0.78), rgba(10, 32, 69, 0.56)),
+        radial-gradient(720px 420px at 78% 24%, rgba(88, 149, 255, 0.36), transparent 60%);
+    }
+
+    #hero::after {
+      display: none;
+    }
+
+    #hero .hero-container {
+      max-width: 1120px;
+      margin: 0 auto;
+      align-items: flex-start;
+      text-align: left;
+      padding: 0 28px;
+      z-index: 2;
+    }
+
+    #hero .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d7e5ff;
+      font-size: 1.12rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    #hero h1 {
+      max-width: 980px;
+      font-size: clamp(2.25rem, 5vw, 4.8rem);
+      line-height: 1.12;
+      font-weight: 800;
+      margin: 0 0 18px;
+    }
+
+    #hero h2 {
+      max-width: 860px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(1.18rem, 2vw, 1.62rem);
+      line-height: 1.7;
+      text-transform: none;
+      margin: 0 0 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    #hero .btn-get-started {
+      margin: 0;
+      border-radius: 6px;
+      text-transform: none;
+      font-weight: 700;
+      letter-spacing: 0;
+      background: #ffffff;
+      color: var(--sv-blue);
+    }
+
+    #hero .btn-secondary-link {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: #fff;
+    }
+
+    #header .logo a {
+      font-weight: 800;
+      color: var(--sv-blue);
+      font-size: 1.12rem;
+      line-height: 1.2;
+    }
+
+    #header .logo img {
+      max-height: 54px;
+      margin-right: 10px;
+    }
+
+    .navbar a,
+    .navbar a:focus {
+      text-transform: none;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 10px 8px;
+    }
+
+    section {
+      background: #fff;
+    }
+
+    .section-bg {
+      background: var(--sv-soft);
+    }
+
+    .section-title h2 {
+      color: var(--sv-blue);
+      font-weight: 800;
+      font-size: 38px;
+    }
+
+    .content p,
+    .rich-text p,
+    .rich-text li {
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .info-card,
+    .track-card,
+    .registration-step,
+    .faq-item {
+      border-radius: 8px;
+      border: 1px solid var(--sv-line);
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      background: #fff;
+    }
+
+    .info-card {
+      height: 100%;
+      padding: 22px;
+    }
+
+    .info-card h3 {
+      color: var(--sv-blue);
+      font-size: 1.28rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .info-card p,
+    .info-card li,
+    .registration-step p,
+    .registration-step li {
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .track-card {
+      overflow: hidden;
+      margin-bottom: 22px;
+    }
+
+    .track-header {
+      background: var(--sv-blue);
+      padding: 16px 22px;
+    }
+
+    .track-header h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .track-body-with-image {
+      padding: 24px 28px;
+    }
+
+    .track-image {
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .badge-soft {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      margin: 4px 6px 4px 0;
+      border-radius: 999px;
+      background: #edf3ff;
+      color: var(--sv-blue);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .table thead {
+      background: var(--sv-blue);
+      color: #fff;
+    }
+
+    .timeline-content-wrapper {
+      padding: 24px;
+      border-radius: 8px;
+      background: #fff;
+      border: 1px solid var(--sv-line);
+    }
+
+    .timeline-list-new li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .timeline-list-new li:last-child {
+      border-bottom: 0;
+    }
+
+    .registration-step {
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .registration-step h3,
+    .faq h3,
+    .license h3 {
+      color: var(--sv-blue);
+      font-weight: 800;
+      font-size: 1.45rem;
+    }
+
+    .faq-item {
+      padding: 20px;
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .rulesBtn {
+      background: var(--sv-blue) !important;
+      border-color: var(--sv-blue) !important;
+      color: #fff !important;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .organizer-name {
+      color: var(--sv-blue);
+      font-size: 1.16rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .organizer-role {
+      color: var(--sv-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    #footer .footer-top h3 {
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 1199px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navbar:not(.navbar-mobile) ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #hero {
+        min-height: 86vh;
+      }
+
+      #hero .hero-container {
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .content p,
+      .rich-text p,
+      .rich-text li,
+      .timeline-list-new li,
+      .faq-item {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <!--<a href="index.html" class="hero-logo" data-aos="zoom-in"><img width="40%"  把home的图标注释掉了
-          src="assets/img/icassp1.jpg" alt="" /></a>-->
-      <!-- 主标题 -->
-      <h1 data-aos="zoom-in" style="font-size: 4rem; font-weight: bold;">SLT2026</h1>
-      <h1 data-aos="zoom-in" style="font-size: 4rem; font-weight: bold;">SmartGlasses Challenge: Egocentric Speech
-        Interaction
-        on AI Glasses</h1>
-
-      <!-- 副标题 --><!--<span style="font-size: 1.2rem; font-weight: normal;">--> <!--</span>-->
-      <h2 data-aos="fade-up" style="color: #fff; font-size: 1.8rem; font-weight: bold; line-height: 1.6;">
-        <span style="font-size: 1.2rem; font-weight: normal;">
-          Benchmarking Egocentric Speech Interaction for Next-Generation AI Glasses in Real-World Environments
-        </span>
+      <div class="eyebrow" data-aos="fade-up">NCMMSC 2026 特殊议题 / 竞赛</div>
+      <h1 data-aos="zoom-in">SinoVoices Challenge<br />中文多方言语音识别挑战赛</h1>
+      <h2 data-aos="fade-up">
+        面向中文多方言语音识别与方言识别的公开、公平、可复现评测平台，推动低资源方言建模、跨方言泛化和中文方言语音资源建设。
       </h2>
-      <!-- 按钮 -->
-      <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started scrollto">Rush In</a>
+      <div class="hero-actions" data-aos="fade-up" data-aos-delay="150">
+        <a href="#about" class="btn-get-started scrollto">了解挑战赛</a>
+        <a href="#timeline" class="btn-get-started btn-secondary-link scrollto">查看时间线</a>
+      </div>
     </div>
   </section>
-  <!-- End Hero -->
 
-  <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
-      <div class="logo">
-        <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid" /></a>
+      <div class="logo d-flex align-items-center">
+        <a href="index.html"><img src="assets/img/sinovoices-logo.png" alt="SinoVoices Challenge logo" class="img-fluid" /></a>
+        <a href="index.html">SinoVoices<br />Challenge</a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#news">News</a></li>
-          <li><a class="nav-link scrollto" href="#task">Tracks</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Data</a></li>
-          <li><a class="nav-link scrollto" href="#evaluation">Evaluation</a></li>
-          <li><a class="nav-link scrollto" href="#registration">Registration</a></li>
-          <li><a class="nav-link scrollto" href="#timeline">Timeline</a></li>
-          <li><a class="nav-link scrollto" href="#leaderboard">Results</a></li>
-          <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-          <!--<li><a class="nav-link scrollto" href="./submission.html">Submission</a></li>-->
+          <li><a class="nav-link scrollto active" href="#hero">首页</a></li>
+          <li><a class="nav-link scrollto" href="#about">赛事简介</a></li>
+          <li><a class="nav-link scrollto" href="#news">新闻</a></li>
+          <li><a class="nav-link scrollto" href="#task">赛道</a></li>
+          <li><a class="nav-link scrollto" href="#data">数据</a></li>
+          <li><a class="nav-link scrollto" href="#evaluation">评测</a></li>
+          <li><a class="nav-link scrollto" href="#registration">报名</a></li>
+          <li><a class="nav-link scrollto" href="#timeline">时间线</a></li>
+          <li><a class="nav-link scrollto" href="#leaderboard">排行榜</a></li>
+          <li><a class="nav-link scrollto" href="#organizers">组织者</a></li>
           <li>
-            <button class="btn-get-started btn rulesBtn" type="button" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop" title="Challenge rules">Rules</button>
+            <button class="btn btn-sm rulesBtn" type="button" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">竞赛规则</button>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-      <!-- .navbar -->
     </div>
   </header>
-  <!-- End Header -->
-
-
 
   <main id="main">
-    <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Challenge Call</h2>
+          <h2>赛事简介</h2>
         </div>
 
-        <div class="row">
-          <!--  注释掉原本图片的内容
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="image">
-              <img src="assets/img/img-1.png" class="img-fluid" alt="" />
+        <div class="row justify-content-center">
+          <div class="col-lg-11 rich-text" data-aos="fade-up">
+            <p>
+              近年来，语音识别技术在标准普通话场景中取得了显著进展，并已广泛应用于智能语音助手、会议转写、智能客服和语音交互等实际场景。然而，真实中文语音输入往往并不局限于标准普通话，而是广泛包含粤语、闽南语、客家话、潮汕话等多种区域性方言，以及带有地域特征的口音表达。
+            </p>
+            <p>
+              中文方言具有地域分布广、语音差异大、词汇表达多样、标注成本高和资源建设不均衡等特点。相比普通话语音数据，方言语音数据普遍存在资源稀缺、覆盖不足和标注规模有限等问题，是典型的低资源语音识别场景。
+            </p>
+            <p>
+              SinoVoices Challenge 拟以 NCMMSC 2026 为平台，围绕中文多方言语音识别与方言识别任务，构建统一的评测数据、评价指标和竞赛流程，为学术界和工业界提供公开、公平、可复现的中文多方言语音处理评测平台。
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="info-card">
+              <h3>覆盖多方言</h3>
+              <p class="mb-0">计划发布覆盖十八种中文方言及区域性口音的人工标注语音数据，支撑低资源方言建模与跨地域泛化评估。</p>
             </div>
           </div>
-          -->
-          <div class="col-lg-12" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 px-4 text-center">
-              <p class="lh-lg" style="text-align: justify;">
-                Driven by the rapid advancement of Large Language Models (LLMs) and Multimodal LLMs,
-                AI-powered smart glasses are emerging as a next-generation platform for human-computer interaction.
-                Equipped with microphone arrays and cameras, smart glasses naturally capture the wearer’s
-                egocentric (first-person) perspective, enabling hands-free multimodal communication throughout daily
-                life.
-              </p>
-
-              <p class="lh-lg" style="text-align: justify;">
-                However, deploying robust speech-centric interaction systems on smart glasses introduces
-                distinct challenges compared with traditional stationary devices such as smart speakers
-                or handheld devices such as smartphones. Smart glasses operate in highly dynamic acoustic
-                environments, including environmental noise, user-generated motion noise, and speech from
-                surrounding people.
-              </p>
-
-              <p class="lh-lg" style="text-align: justify;">
-                To address these challenges, the SmartGlasses Challenge introduces a new benchmark
-                for evaluating Time-Stamped Speaker-Attributed ASR (TSA-ASR) and Spoken Language Understanding (SLU)
-                in real-world egocentric interaction scenarios, including
-                dyadic conversation, and multi-party meetings.
-              </p>
-              <div style="background-color: #1f4385;" class="mx-5 rounded">
-                <!-- Optional banner space -->
-              </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <h3>双任务设置</h3>
+              <p class="mb-0">设置中文方言识别与中文多方言语音识别两个核心任务，分别评估方言类别判别能力与语音内容转写能力。</p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="info-card">
+              <h3>双排行榜机制</h3>
+              <p class="mb-0">设置公开数据排行榜和开放数据排行榜，兼顾正式排名公平性与技术探索价值。</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- End About Us Section -->
 
-    <!-- ======= News Section ======= -->
     <section id="news" class="timeline-new section-bg">
       <div class="container">
-
         <div class="section-title" data-aos="fade-up">
-          <h2>Latest News</h2>
+          <h2>最新动态</h2>
         </div>
-
         <div class="row">
           <div class="col-lg-12">
             <div class="timeline-content-wrapper" data-aos="fade-up" data-aos-delay="100">
-              <p class="intro-text">
-                Here are the latest updates and news from the SmartGlasses Challenge organizers:
-              </p>
-
               <ul class="timeline-list-new" style="list-style: none; padding-left: 0; margin: 0;">
-                <li style="margin: 0.8em 0;">
-
-                  <strong>2026-06-06 (New!):</strong> The release of the test set is estimated to take place within one week.
-                </li>
-                <li style="margin: 0.8em 0;">
-                  <strong>2026-05-27:</strong> Challenge rules have been updated. The
-                  <a href="https://github.com/DontPushMeee/Smart-Glass-Challenge" target="_blank"
-                    rel="noopener noreferrer">Official Evaluation Toolkit</a>
-                  is now publicly available!
-                </li>
-
-                <li style="margin: 0.8em 0;">
-                  <strong>2026-05-26:</strong> The training and validation data (Part 2) have been released! All
-                  training and validation data are now available to all registered teams.
-                </li>
-
-                <li style="margin: 0.8em 0;">
-
-                  <strong>2026-05-15:</strong> The training data and validation data (Part 1) have now been
-                  released! All participating teams, please check the email address used for challenge registration to
-                  obtain the data download link. The rest of the training data and validation data will be released in
-                  the next few days.
-                </li>
-
-                <li style="margin: 0.8em 0;">
-
-                  <strong>2026-05-07:</strong> The release of the training set and validation set is rescheduled to May
-                  14th.
-                </li>
-                <li style="margin: 0.8em 0;">
-                  <strong>2026-04-15:</strong> Registration Opens
-
-                </li>
+                <li><strong>2026 年 6 月 22 日：</strong>挑战赛官网计划发布，报名开放，开源数据表公布，竞赛训练集发布。</li>
+                <li><strong>2026 年 6 月 15 日：</strong>NCMMSC 2026 特殊议题申请截止。</li>
+                <li><strong>2026 年 4 月 30 日：</strong>NCMMSC 2026 特殊议题征集开放。</li>
               </ul>
             </div>
           </div>
         </div>
-
       </div>
     </section>
-    <!-- End News Section -->
 
-    <!-- ======= Tasks Section (with Images) ======= -->
     <section id="task" class="task">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>Track Overview</h2>
+          <h2>任务与赛道</h2>
         </div>
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 px-4">
 
-
-
-              <!-- Track 2 Card -->
-              <div class="track-card">
-                <div class="track-header">
-                  <h3>Track 1: Dyadic Dialogue Understanding</h3>
-                </div>
-                <div class="track-body-with-image">
-                  <div class="row align-items-center">
-                    <!-- Image for Track 2 -->
-                    <div class="col-md-4 text-center">
-                      <img src="assets/img/Two_person.jpg" alt="Track 2 Illustration" class="img-fluid track-image">
-                    </div>
-                    <!-- Text for Track 2 -->
-                    <div class="col-md-8">
-                      <p>
-                        <strong>Scenario:</strong> Face-to-face two-person conversations in everyday settings, involving
-                        overlapping speech, background interference, topic shifts, and complex semantic structures.
-                      </p>
-
-                      <p>
-                        <strong>TSA-ASR Task:</strong> Evaluate speaker-attributed transcription with time alignment in
-                        overlapping speech scenarios. The metric is time-constrained minimum permutation WER (tcpWER).
-                      </p>
-
-                      <p>
-                        <strong>SLU Task:</strong> Evaluate the system’s ability to capture factual details, track
-                        logical flow, and understand relationships between speakers within dyadic dialogues.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        <div class="track-card" data-aos="fade-up">
+          <div class="track-header">
+            <h3>任务一：中文方言识别</h3>
+          </div>
+          <div class="track-body-with-image">
+            <div class="row align-items-center g-4">
+              <div class="col-md-4 text-center">
+                <img src="assets/img/sinovoices-dialect-id.png" alt="中文方言识别任务示意" class="img-fluid track-image" />
               </div>
-
-              <!-- Track 3 Card -->
-              <div class="track-card">
-                <div class="track-header">
-                  <h3>Track 2: Multi-Party Meeting Understanding</h3>
-                </div>
-                <div class="track-body-with-image">
-                  <div class="row align-items-center">
-                    <!-- Image for Track 3 -->
-                    <div class="col-md-4 text-center">
-                      <img src="assets/img/Multi-PartyMeetingUnderstanding.png" alt="Track 3 Illustration"
-                        class="img-fluid track-image">
-                    </div>
-                    <!-- Text for Track 3 -->
-                    <div class="col-md-8">
-                      <p>
-                        <strong>Scenario:</strong> Multi-speaker meetings with varying numbers of participants, frequent
-                        turn-taking, long conversational contexts, and domain-specific vocabulary.
-                      </p>
-
-                      <p>
-                        <strong>TSA-ASR Task:</strong> Evaluate multi-speaker speech recognition with speaker
-                        diarization and temporal alignment in highly overlapped environments. The metric is tcpWER.
-                      </p>
-
-                      <p>
-                        <strong>SLU Task:</strong> Evaluate the system’s ability to understand complex meeting
-                        discussions, extract key information, and summarize speaker-wise viewpoints from long-form
-                        conversations.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-md-8 rich-text">
+                <p><strong>任务目标：</strong>参赛者需要根据输入语音判断其所属的方言类别或地域口音类别。</p>
+                <p><strong>任务重点：</strong>关注系统对不同方言的区分能力，尤其关注相近方言混淆、地域口音差异和低资源方言识别等问题。</p>
+                <p class="mb-0"><strong>初步评价指标：</strong>准确率 Accuracy。</p>
               </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="track-card" data-aos="fade-up" data-aos-delay="80">
+          <div class="track-header">
+            <h3>任务二：中文多方言语音识别</h3>
+          </div>
+          <div class="track-body-with-image">
+            <div class="row align-items-center g-4">
+              <div class="col-md-4 text-center">
+                <img src="assets/img/sinovoices-asr.png" alt="中文多方言语音识别任务示意" class="img-fluid track-image" />
+              </div>
+              <div class="col-md-8 rich-text">
+                <p><strong>任务目标：</strong>构建面向中文多方言语音的自动语音识别系统，将输入语音准确转写为对应文本。</p>
+                <p><strong>任务重点：</strong>评估模型在不同方言类别、地域口音、说话人和声学条件下的转写能力，重点关注多方言场景中的识别准确率。</p>
+                <p class="mb-0"><strong>初步评价指标：</strong>字符错误率 CER。</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <style>
-      .task {
-        padding: 60px 0;
-        background-color: #f8f9fa;
-      }
-
-      .section-title h2 {
-        font-size: 32px;
-        font-weight: bold;
-        color: #1f4385;
-        margin-bottom: 10px;
-      }
-
-      .section-title p {
-        font-size: 18px;
-        color: #666;
-      }
-
-      .track-card {
-        background-color: #fff;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .track-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      }
-
-      .track-header {
-        background-color: #1f4385;
-        padding: 15px 20px;
-      }
-
-      .track-header h3 {
-        color: #fff;
-        font-size: 24px;
-        margin: 0;
-      }
-
-      .track-body-with-image {
-        padding: 20px 30px;
-        /* 增加了左右内边距 */
-      }
-
-      .track-body-with-image p {
-        font-size: 16px;
-        color: #333;
-        line-height: 1.7;
-        /* 略微增加行高，提升可读性 */
-        margin: 0;
-        text-align: justify;
-        /* 两端对齐，更美观 */
-      }
-
-      .track-image {
-        border-radius: 8px;
-        /* 给图片加一点圆角 */
-        background-color: #ffffff;
-        /* 确保透明背景的图片显示正常 */
-        padding: 5px;
-        /* 图片周围留一点白边 */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        /* 给图片加一点轻微的阴影 */
-        margin-bottom: 15px;
-        /* 在移动端，图片和下方文字的间距 */
-      }
-
-      /* 响应式调整：只在桌面端（md及以上）应用文字部分的左边距 */
-      @media (min-width: 768px) {
-        .track-body-with-image p {
-          padding-left: 20px;
-          /* 在大屏幕上，让文字和图片之间有更多空间 */
-        }
-
-        .track-image {
-          margin-bottom: 0;
-          /* 在桌面端，图片和文字同行，不需要底部边距 */
-        }
-      }
-
-      @media (max-width: 768px) {
-        .section-title h2 {
-          font-size: 28px;
-        }
-
-        .section-title p {
-          font-size: 16px;
-        }
-
-        .track-header h3 {
-          font-size: 20px;
-        }
-
-        .track-body p {
-          font-size: 14px;
-        }
-      }
-    </style>
-
-    <section id="pricing" class="pricing section-bg">
+    <section id="data" class="pricing section-bg">
       <div class="container">
-        <!-- Title Section -->
         <div class="section-title" data-aos="fade-up">
-          <h2 style="font-size: 36px; font-weight: bold; color: #1f4385;">Data Description</h2>
+          <h2>数据集说明</h2>
         </div>
 
-        <!-- Dataset Description Section -->
-        <div class="row">
-          <div class="col-lg-12 mb-5" data-aos="fade-up"
-            style="font-size: 16px; text-align: justify; line-height: 1.65;">
+        <div class="row g-4">
+          <div class="col-lg-7 rich-text" data-aos="fade-up">
             <p>
-              The organizing committee has provided independent download links for each track. After downloading and
-              extracting the files, taking Track 1 as an example, the file structure of the dataset&apos;s root
-              directory
-              (<strong>SmartGlasses-Track1</strong>) is as follows (the structure for Track 2 is identical):
+              本挑战赛计划基于组织方整理和构建的中文多方言语音数据开展统一评测。数据将覆盖多种中文方言和区域性方言语音，后续将根据数据质量、类别规模、标注一致性、语言学划分和竞赛可操作性，对方言类别进行整理、合并和规范化。
             </p>
-
-            <pre class="mb-4"
-              style="background: #f8f9fa; border: 1px solid rgba(31, 67, 133, 0.12); border-radius: 8px; padding: 1rem 1.25rem; font-size: 14px; overflow-x: auto; text-align: left; line-height: 1.5;">SmartGlasses-Track1/
-├── Train/                 # Training set
-│   └── Part1/
-│       ├── audio/         # Audio files (.wav)
-│       └── textgrid/      # Text and timestamp annotation files (.TextGrid)
-├── Dev/                   # Development (Validation) set
-│   └── Part1/
-│       ├── audio/
-│       ├── textgrid/
-│       └── QA/            # QA annotation files (.json) - Provided only in the Dev set
-└── data.jsonl             # Global data index and metadata file</pre>
-
-            <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Detailed folder descriptions</h3>
-            <ul style="padding-left: 1.25rem;">
-              <li class="mb-2">
-                <strong>audio/:</strong> Contains the four-channel dialogue audio files (.wav format) for the respective
-                track.
-              </li>
-              <li class="mb-2">
-                <strong>textgrid/:</strong> Contains the .TextGrid annotation files corresponding to the audio. These
-                files include speaker-level timestamp boundaries and their corresponding text transcriptions.
-              </li>
-              <li class="mb-2">
-                <strong>QA/:</strong> (Provided only in the Dev set.) This folder contains the .json files used for the
-                objective multiple-choice evaluation. Each JSON file corresponds to an audio segment and includes the
-                question, options, and ground-truth answer required for the evaluation.
-                <p class="mb-0 mt-2" style="text-align: justify;">
-                  <strong>Special note on QA data:</strong> The multiple-choice QA data in the Dev set is automatically
-                  generated by large language models (LLMs) and has not undergone strict human verification; therefore,
-                  it
-                  may contain minor flaws or noise. We are fully open-sourcing this data and its answers to serve as
-                  reference examples, helping participating teams build their pipelines and debug their models. For the
-                  final hidden test set, we will use a similar approach to construct complex speech understanding and
-                  reasoning multiple-choice questions. However, all test questions and ground-truth answers will undergo
-                  strict human review and refinement to ensure absolute fairness and scientific rigor in the final
-                  evaluation.
-                </p>
-              </li>
+            <ul>
+              <li>覆盖多种中文方言和区域性方言语音；</li>
+              <li>包含不同地区、不同说话人和不同发音习惯；</li>
+              <li>支持中文多方言语音识别和方言识别两个任务；</li>
+              <li>提供统一的数据划分方式、标注规范、提交格式和评测脚本；</li>
+              <li>评测集标签不公开，用于最终排行榜和系统排名。</li>
             </ul>
-
-            <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Global index file: data.jsonl</h3>
-            <p>
-              A <strong>data.jsonl</strong> file is provided in the root directory of each track. This file serves as
-              the
-              global index for the entire dataset, where each line represents the metadata for a single data sample.
-            </p>
-            <p class="mb-0">
-              <strong>Note:</strong> The additionally collected data will be released later as Part 2. Part 2 is merely
-              a
-              chronological update in the release schedule; its data format and folder structure will be exactly
-              identical to the current Part 1.
-            </p>
-
-            <h3 class="h5 fw-bold mt-5 mb-3" style="color: #1f4385;">Dataset statistics</h3>
-            <p class="mb-4">
-              Below is the statistical overview of the currently released Part 1 data (this table will be updated upon
-              the release of Part 2):
-            </p>
-
-            <h4 class="fw-bold mb-2" style="color: #1f4385; font-size: 1.1rem;">Track 1: Dyadic Dialogue Understanding
-            </h4>
-            <div class="table-responsive mb-5">
-              <table class="table table-bordered" style="font-size: 14px;">
-                <thead style="background-color: #1f4385; color: white;">
-                  <tr>
-                    <th>Split</th>
-                    <th>Sessions</th>
-                    <th>Total Duration (hrs)</th>
-                    <th>Avg. Duration (sec)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Train (Part 1)</td>
-                    <td>332</td>
-                    <td>29.12</td>
-                    <td>315.71</td>
-                  </tr>
-                  <tr>
-                    <td>Dev (Part 1)</td>
-                    <td>66</td>
-                    <td>5.59</td>
-                    <td>304.82</td>
-                  </tr>
-                  <tr>
-                    <td>Total</td>
-                    <td>398</td>
-                    <td>34.71</td>
-                    <td>313.90</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h4 class="fw-bold mb-2" style="color: #1f4385; font-size: 1.1rem;">Track 2: Multi-party Meeting
-              Understanding</h4>
-            <div class="table-responsive">
-              <table class="table table-bordered" style="font-size: 14px;">
-                <thead style="background-color: #1f4385; color: white;">
-                  <tr>
-                    <th>Split</th>
-                    <th>Sessions</th>
-                    <th>Total Duration (hrs)</th>
-                    <th>Avg. Duration (sec)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Train (Part 1)</td>
-                    <td>105</td>
-                    <td>34.13</td>
-                    <td>1170.09</td>
-                  </tr>
-                  <tr>
-                    <td>Dev (Part 1)</td>
-                    <td>21</td>
-                    <td>7.06</td>
-                    <td>1210.47</td>
-                  </tr>
-                  <tr>
-                    <td>Total</td>
-                    <td>126</td>
-                    <td>41.19</td>
-                    <td>1176.82</td>
-                </tbody>
-              </table>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <h3>计划覆盖方言 / 区域</h3>
+              <div>
+                <span class="badge-soft">安徽</span>
+                <span class="badge-soft">粤语</span>
+                <span class="badge-soft">长沙</span>
+                <span class="badge-soft">潮汕</span>
+                <span class="badge-soft">东北</span>
+                <span class="badge-soft">河南</span>
+                <span class="badge-soft">客家</span>
+                <span class="badge-soft">闽南</span>
+                <span class="badge-soft">南昌</span>
+                <span class="badge-soft">南京</span>
+                <span class="badge-soft">山西</span>
+                <span class="badge-soft">陕西</span>
+                <span class="badge-soft">山东</span>
+                <span class="badge-soft">上海</span>
+                <span class="badge-soft">四川</span>
+                <span class="badge-soft">苏州</span>
+                <span class="badge-soft">武汉</span>
+                <span class="badge-soft">徐州</span>
+              </div>
             </div>
           </div>
-
-
-          <!-- Glasses Image and Microphone Array Description -->
-          <div class="row mb-4">
-            <div class="col-lg-12 text-center" data-aos="fade-up">
-              <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Smart Glasses Microphone Array Layout</h3>
-              <img src="assets/img/glasses.jpg" alt="SmartGlasses Microphone Array" class="img-fluid"
-                style="max-width: 70%; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            </div>
-          </div>
-
-          <div class="row mb-5">
-            <div class="col-lg-12" data-aos="fade-up" style="font-size: 16px; text-align: justify; line-height: 1.65;">
-
-              <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Channel-to-Microphone Mapping</h3>
-              <p>
-                The 4 channels of the audio files are mapped to the physical micro-electro-mechanical systems (MEMS)
-                microphone array integrated onto the smart glasses frames as follows:
-              </p>
-              <ul style="padding-left: 1.25rem;">
-                <li class="mb-2"><strong>Channel 1 (mic1):</strong> Right temple, rear position</li>
-                <li class="mb-2"><strong>Channel 2 (mic2):</strong> Right temple, front position</li>
-                <li class="mb-2"><strong>Channel 3 (mic3):</strong> Left temple, front position</li>
-                <li class="mb-2"><strong>Channel 4 (mic4):</strong> Left temple, rear position</li>
-              </ul>
-
-              <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Physical Array Geometry</h3>
-              <p>
-                The spatial coordinates and geometric constraints of the acoustic centers of the four microphones are
-                specified below:
-              </p>
-
-              <p class="fw-bold mb-2">Horizontal Projection Displacements:</p>
-              <ul style="padding-left: 1.25rem;">
-                <li class="mb-2"><strong>Intra-temple separation (Right):</strong> The axial distance between mic1 and
-                  mic2
-                  is 47 mm.</li>
-                <li class="mb-2"><strong>Intra-temple separation (Left):</strong> The axial distance between mic3 and
-                  mic4
-                  is 50 mm.</li>
-                <li class="mb-2"><strong>Inter-temple span (Front):</strong> The cross-lateral distance between mic2 and
-                  mic3 is 145 mm.</li>
-                <li class="mb-2"><strong>Inter-temple span (Rear):</strong> The cross-lateral distance between mic1 and
-                  mic4
-                  is 146 mm.</li>
-              </ul>
-
-              <p class="fw-bold mb-2">Vertical &amp; Lateral Offsets:</p>
-              <ul style="padding-left: 1.25rem;">
-                <li class="mb-2">Compared to the right-rear microphone (mic1), the right-front microphone (mic2)
-                  features a
-                  positive vertical elevation of 10 mm and an outward lateral offset of 1 mm along the frame thickness
-                  direction.</li>
-                <li class="mb-2">The acoustic centers of mic1, mic3, and mic4 reside on the same horizontal reference
-                  plane
-                  (zero vertical offset).</li>
-                <li class="mb-2">The left and right temples are orthogonal to the plane of the lenses.</li>
-                <li class="mb-2">The baseline connecting mic1 and mic4 is strictly parallel to the plane of the lenses.
-                </li>
-              </ul>
-            </div>
-          </div>
-
-
-          <!-- Evaluation Metric Section -->
-
         </div>
+
+        <div class="row g-4 mt-2">
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="info-card">
+              <h3>公开数据排行榜</h3>
+              <p class="mb-0">用于确定挑战赛最终正式排名、奖项评定和证书。参赛队伍仅允许使用组织方提供的数据、明确允许的公开开源数据、公开预训练模型以及公开可复现的训练资源，并需提交数据使用说明。</p>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <h3>开放数据排行榜</h3>
+              <p class="mb-0">用于探索中文多方言语音识别与方言识别任务的性能上限。可使用公开数据、企业内部数据、实验室自建数据或其他合法数据资源，但需披露数据来源、规模、类别覆盖和使用方式。</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ======= Evaluation & Baselines Section ======= -->
     <section id="evaluation" class="evaluation">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2 style="font-size: 36px; font-weight: bold; color: #1f4385;">Evaluation & Baselines</h2>
+          <h2>评测与提交</h2>
         </div>
 
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-up" style="font-size: 16px; text-align: justify; line-height: 1.65;">
-            <p>
-              To assist participating teams in accurately evaluating their models' performance locally, the organizing
-              committee has initially released the official evaluation guidelines and scoring scripts. In the subsequent
-              phases, we will continuously update the repository with the evaluation performances of more baseline
-              systems
-              (including baseline models trained on a combination of open-source datasets and the official SmartGlasses
-              scenario data).
-            </p>
-
-            <p>
-              <strong>Official Evaluation & Baseline Repository (GitHub):</strong>
-              <a href="https://github.com/DontPushMeee/Smart-Glass-Challenge" target="_blank" rel="noopener noreferrer">
-                SmartGlasses Challenge - Scoring & Baseline</a>.
-              This toolkit standardizes the evaluation metrics, time tolerance collars, and input formats, ensuring that
-              local evaluations on the Dev Set perfectly align with the final Test Set official scoring standards.
-            </p>
-
-            <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Task 1: TSA-ASR (Time-Stamped Speaker-Attributed
-              ASR)</h3>
-            <ul style="padding-left: 1.25rem;">
-              <li class="mb-2">
-                <strong>Primary Ranking Metric:</strong> tcpWER. A strict time tolerance collar of 0.25 seconds is
-                applied
-                during the official evaluation.
-              </li>
-              <li class="mb-2">
-                <strong>Diagnostic Metrics:</strong> cpWER and DER are additionally reported to help teams pinpoint
-                specific sources of error within their systems.
-              </li>
-              <li class="mb-2">
-                <strong>Rules & Format:</strong> The official ASR evaluation pipeline is built upon the open-source
-                framework MeetEval. Model outputs must strictly adhere to the STM (Segmental Time Mark) format. For
-                detailed scoring rules and Chinese tokenization guidelines, please refer to our GitHub page.
-              </li>
-            </ul>
-
-            <h3 class="h5 fw-bold mt-4 mb-3" style="color: #1f4385;">Task 2: SLU (Spoken Language Understanding / Audio
-              QA)</h3>
-            <ul style="padding-left: 1.25rem;">
-              <li class="mb-2">
-                <strong>Metric:</strong> Accuracy, defined as the percentage of correctly answered multiple-choice
-                questions.
-              </li>
-              <li class="mb-2">
-                <strong>Current Status:</strong> For now, teams can evaluate their models locally by calculating the
-                exact
-                match accuracy against the Dev Set references.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Evaluation & Baselines Section -->
-
-    <style>
-      .evaluation {
-        padding: 60px 0;
-      }
-
-      .evaluation a {
-        color: #1f4385;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .evaluation a:hover {
-        text-decoration: underline;
-      }
-    </style>
-
-
-    <!-- ======= Registration Section ======= -->
-    <section id="registration" class="registration">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>Registration Guidelines</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-12" data-aos="fade-left">
-            <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3 px-4">
-              <div class="registration-step">
-                <h3>Step 1: Registration</h3>
-                <p>Please complete your registration by filling out a registration form.</p>
-                <ul>
-                  <li>
-                    <strong>Preferred: </strong>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfReBQPIFSNJ_pJkpyPJ_icfYxHznTD5y6WtOk5goC-BLPcOQ/viewform"
-                      target="_blank" rel="noopener noreferrer">Google Registration Form</a>
-                  </li>
-                  <li>
-                    <strong>Alternative (Mainland China): </strong>If you cannot access Google Forms, or if repeated
-                    submissions are unsuccessful, please use the <a
-                      href="https://docs.qq.com/form/page/DVWV6ZGJoSFBnd3Zi" target="_blank"
-                      rel="noopener noreferrer">Tencent Registration Form</a>.
-                  </li>
-                </ul>
-                <p style="margin-bottom: 0;">
-                  <strong> After you submit the registration form, the organizing committee will send a confirmation
-                    email within 1 business day. Please check your inbox in time; if you do not receive it, please check
-                    your spam folder first, or contact us via the email addresses below.</strong>
-                </p>
-                <!-- <ul>
-                  <li>Team name</li>
-                  <li>Team member's name</li>
-                  <li>Organization</li>
-                  <li>Email address</li>
-                </ul> -->
-              </div>
-
-              <div class="registration-step">
-                <h3>Step 2: Dataset Access</h3>
-                <p>
-                  After successful registration and agreeing to the challenge rules, participating teams will be granted
-                  access to the SmartGlasses dataset, and the download link will be sent via email.
-                </p>
-              </div>
-
-              <div class="registration-step">
-                <h3>Contact Information</h3>
-                <p>
-                  If you have any questions, please contact the organizers:
-                </p>
-                <ul style="margin-left: 20px; margin-bottom: 0;">
-
-                  <li>
-                    <a href="mailto:gdh@mail.nwpu.edu.cn">gdh@mail.nwpu.edu.cn</a>
-                  </li>
-                  <li>
-                    <a href="mailto:zxzhao@mail.nwpu.edu.cn">zxzhao@mail.nwpu.edu.cn</a>
-                  </li>
-                  <li>
-                    <a href="mailto:liaoyujie@mail.nwpu.edu.cn">liaoyujie@mail.nwpu.edu.cn</a>
-                  </li>
-                </ul>
-                <div style="margin-top: 14px;">
-                  <div style="font-weight: 600; color: #1f4385; margin-bottom: 8px;">WeChat Group QR Code</div>
-                  <img src="assets/img/wechat.jpg" alt="WeChat group QR code"
-                    style="max-width: 220px; width: 100%; border-radius: 10px; border: 1px solid rgba(15, 23, 42, 0.08); box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);" />
-                  <div style="margin-top: 10px;">
-                    <strong>If the QR code is expired, please email us to request the latest QR code.</strong>
-                  </div>
-                </div>
-              </div>
-
-              <p style="font-size: 15px; color: #555; line-height: 1.65; margin-top: 12px; margin-bottom: 0;">
-                The organizers of the challenge reserve the right to interpret, modify, and amend the participation
-                terms
-                and challenge rules.
-              </p>
-
-              <!-- <div class="registration-step">
-                <h3>Submission Guidelines</h3>
-                <ul>
-                  <li>Each team should submit their predictions for the evaluation tasks (Recognition & Understanding).
-                  </li>
-                  <li>Track 1 & 2 require tcpWER for recognition and QA Accuracy for understanding.</li>
-                </ul>
-              </div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End Registration Section -->
-
-    <style>
-      .registration {
-        padding: 60px 0;
-        background-color: #f8f9fa;
-      }
-
-      .section-title h2 {
-        font-size: 32px;
-        font-weight: bold;
-        color: #1f4385;
-        margin-bottom: 10px;
-      }
-
-      .section-title p {
-        font-size: 18px;
-        color: #666;
-      }
-
-      .registration-step {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .registration-step h3 {
-        color: #1f4385;
-        font-size: 24px;
-        margin-bottom: 15px;
-      }
-
-      .registration-step p {
-        font-size: 16px;
-        color: #333;
-        line-height: 1.6;
-        margin-bottom: 15px;
-      }
-
-      .registration-step ul {
-        margin-left: 20px;
-        margin-bottom: 15px;
-      }
-
-      .registration-step ul li {
-        font-size: 16px;
-        color: #333;
-        line-height: 1.6;
-        margin-bottom: 10px;
-      }
-
-      .registration-step a {
-        color: #1f4385;
-        text-decoration: none;
-      }
-
-      .registration-step a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 768px) {
-        .section-title h2 {
-          font-size: 28px;
-        }
-
-        .section-title p {
-          font-size: 16px;
-        }
-
-        .registration-step h3 {
-          font-size: 20px;
-        }
-
-        .registration-step p,
-        .registration-step ul li {
-          font-size: 14px;
-        }
-      }
-    </style>
-
-
-    <!-- ======= Timeline Section (New Style) ======= -->
-    <section id="timeline" class="timeline-new section-bg">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Challenge Timeline</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="timeline-content-wrapper" data-aos="fade-up" data-aos-delay="100">
-              <!-- <p class="intro-text">
-                The tentative timeline for running the challenge is as follows (TBD):
-              </p> -->
-              <p>The tentative timeline for running the challenge is as follows:</p>
-              <ul class="timeline-list-new" style="list-style: none; padding-left: 0; margin: 0;">
-                <li style="margin: 0.8em 0;">
-                  <strong>2026-04-15:</strong> Registration Opens
-                </li>
-                <li style="margin: 0.8em 0;"><strong>2026-05-07:</strong> Release of Training Set, Validation Set</li>
-                <li style="margin: 0.8em 0;"><strong>2026-06-01:</strong> Registration Closes</li>
-                <li style="margin: 0.8em 0;"><strong>2026-06-05:</strong> Release of Test Set</li>
-                <li style="margin: 0.8em 0;"><strong>2026-06-19:</strong> Results Submission Deadline</li>
-                <li style="margin: 0.8em 0;"><strong>2026-07-03:</strong> System Description Submission Deadline</li>
-                <li style="margin: 0.8em 0;"><strong>2026-07-08:</strong> SLT Official Paper Submission Deadline</li>
-                <li style="margin: 0.8em 0;"><strong>2026-09-01:</strong> Paper Notification</li>
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="info-card">
+              <h3>评测指标</h3>
+              <ul class="mb-0">
+                <li><strong>中文方言识别：</strong>准确率 Accuracy。</li>
+                <li><strong>中文多方言语音识别：</strong>字符错误率 CER。</li>
+                <li><strong>最终评测：</strong>以隐藏测试集为准，评测集标签不公开。</li>
               </ul>
             </div>
           </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- End Timeline Section -->
-
-    <section id="leaderboard" class="leaderboard">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>Results</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h3>Results will be announced after submission evaluation procedure...</h3>
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card">
+              <h3>论文与系统说明</h3>
+              <p>参赛队伍可提交挑战赛系统描述论文或相关研究论文，内容可包括系统方案、数据使用策略、模型结构、训练方法、推理流程、实验结果、错误分析和消融实验等。</p>
+              <p class="mb-0">优秀论文和优秀参赛系统将在 NCMMSC 2026 特殊议题论坛中进行口头报告或海报展示。</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-
-
-    <!-- ======= FAQ Section ======= -->
-    <section id="faq" class="faq section-bg">
+    <section id="registration" class="registration section-bg">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2>FAQ</h2>
+          <h2>报名与资源</h2>
         </div>
 
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up">
-
-            <h3 class="h5 fw-bold mb-4" style="color: #1f4385;">1. Data</h3>
-
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: Why does the current download only include Part 1? Will Part 2 have a different
-                format?</p>
-              <p>A: We adopted a staged release strategy to allow participating teams to acquire data and set up
-                baseline pipelines as early as possible. Part 1 contains the complete directory structure and sufficient
-                data to run through the entire process. Part 2 will be released gradually within a week. Part 2 simply
-                represents an expansion in data volume; its file format, four-channel audio properties, and directory
-                structure will be exactly identical to Part 1. When released, you will only need to append the new data
-                to the corresponding folders.</p>
+            <div class="registration-step">
+              <h3>报名系统</h3>
+              <p class="mb-0">报名系统待公布。挑战赛官网发布后，将在本页面同步更新报名入口、参赛协议和队伍信息提交方式。</p>
             </div>
 
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: I noticed that the multiple-choice QA in the Dev set occasionally contains
-                logical flaws or noise. Will the Test set be the same?</p>
-              <p>A: The QA pairs in the Dev set were automatically generated by Large Language Models (LLMs) without
-                strict human verification, and are provided merely as "reference examples" for teams to debug their
-                pipelines. For the hidden Test set used for final leaderboard ranking, all questions and Ground Truth
-                answers will undergo rigorous double human verification and refinement.</p>
+            <div class="registration-step">
+              <h3>数据与工具</h3>
+              <ul class="mb-0">
+                <li><strong>数据下载地址：</strong>待公布。</li>
+                <li><strong>排行榜地址：</strong>待公布。</li>
+                <li><strong>代码仓库：</strong>待公布。后续将发布任务说明、提交格式、评测脚本、基线系统和 FAQ。</li>
+              </ul>
             </div>
 
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: The audio is four-channel. Do I have to use all the channels?</p>
-              <p>A: We provide complete four-channel audio to preserve the most authentic acoustic spatial information.
-                Participating teams are free to decide whether to utilize the multi-channel information for beamforming
-                / front-end signal processing, or simply extract a single channel for model training. This depends
-                entirely on your algorithm design.</p>
+            <div class="registration-step">
+              <h3>联系方式</h3>
+              <p>如有问题，请联系组织方。联系方式将在报名开放时进一步更新。</p>
+              <ul class="mb-0">
+                <li><a href="mailto:liaoyujie@mail.nwpu.edu.cn">liaoyujie@mail.nwpu.edu.cn</a></li>
+              </ul>
             </div>
-
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: If I only participate in a single track, can I use the data from the other
-                track for training?</p>
-              <p>A: Yes, this is fully permitted. You are welcome to use the official datasets across tracks (e.g.,
-                using Track 2 data to assist in training a model for Track 1) to augment your training data and improve
-                the model's generalizability.</p>
-            </div>
-
-            <h3 class="h5 fw-bold mt-5 mb-4" style="color: #1f4385;">2. Models &amp; Rules</h3>
-
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: Does the challenge require using the same model/system to simultaneously
-                complete both TSA-ASR and SLU tasks? Is it allowed to design separate modules?</p>
-              <p>A: We allow separate, independent systems for the two tasks. You may decouple them — for example,
-                training a dedicated recognition system specifically for the TSA-ASR task, and training another
-                independent model specifically for the SLU task. Nevertheless, we strongly encourage teams to explore
-                unified architectures capable of handling both tasks simultaneously.</p>
-            </div>
-
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: Do I have to use the exact same model to participate in both Track 1
-                and Track 2?</p>
-              <p>A: This is not mandatory. You can design one specific model for Track 1 and a different model for Track
-                2. However, we encourage teams with sufficient resources to explore foundational
-                Omni-modal/Audio-Language Models capable of handling both tracks simultaneously.</p>
-            </div>
-
-            <div class="faq-item">
-              <p class="fw-bold mb-1">Q: Can we use external data and pre-trained foundation models?</p>
-              <p>A: Yes, this is allowed. You may use open-source pre-trained foundation models (e.g., Whisper, LLaMA,
-                Qwen) and external, open-source datasets (e.g., LibriSpeech). However, the use of any private data is
-                strictly prohibited. All external resources and data augmentation methods used must be explicitly
-                disclosed in the final System Description Paper.</p>
-            </div>
-
           </div>
         </div>
       </div>
     </section>
 
-    <style>
-      .faq {
-        padding: 60px 0;
-      }
-
-      .faq-item {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        margin-bottom: 16px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-size: 16px;
-        line-height: 1.65;
-        text-align: justify;
-      }
-
-      .faq-item p {
-        margin-bottom: 0;
-        color: #333;
-      }
-    </style>
-    <!-- End FAQ Section -->
-
-    <!-- ======= License Section ======= -->
-    <section id="license" class="license">
+    <section id="timeline" class="timeline-new">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
-          <h2 class="font-weight-bold" style="font-size: 28px;">Data License</h2>
+          <h2>重要日期</h2>
         </div>
 
-        <div class="content" style="text-align: justify; font-size: 16px; line-height: 1.65;">
-          <p class="mb-4">
-            By downloading and using the SmartGlasses Challenge dataset, participating teams agree to and commit to
-            strictly abiding by the following terms:
-          </p>
-
-          <h3 class="h5 fw-bold mb-3" style="color: #1f4385;">1.1 Usage Restrictions</h3>
-          <ul class="mb-4" style="padding-left: 1.25rem;">
-            <li class="mb-2">
-              The authorization of this dataset is strictly limited to non-commercial academic research.
-            </li>
-            <li class="mb-0">
-              The dataset may only be used for participating in the &quot;IEEE SLT 2026 SmartGlasses Challenge&quot; and
-              subsequent related academic research after the challenge concludes. It is strictly prohibited to use this
-              dataset or any of its derivative versions for any commercial purposes, product development, or profitable
-              services.
-            </li>
-          </ul>
-
-          <h3 class="h5 fw-bold mb-3" style="color: #1f4385;">1.2 Distribution &amp; Confidentiality</h3>
-          <ul class="mb-4" style="padding-left: 1.25rem;">
-            <li class="mb-0">
-              This dataset is accessible only to officially registered teams. Participating teams must not publish,
-              leak, transfer, or distribute the dataset (including audio files, text annotations, and any subsets) to
-              unregistered third-party individuals or organizations.
-            </li>
-          </ul>
-
-          <h3 class="h5 fw-bold mb-3" style="color: #1f4385;">1.3 Mandatory Citation</h3>
-          <p class="mb-3">
-            Any research outcomes generated using this dataset (including but not limited to academic papers, technical
-            reports, public presentations, or open-source projects) must comply with the following citation guidelines:
-          </p>
-          <ul class="mb-4" style="padding-left: 1.25rem;">
-            <li class="mb-2">
-              <strong>During the challenge and before the official paper publication:</strong> The official website of
-              the SmartGlasses Challenge (<a href="https://aslp-lab.github.io/SmartGlasses" target="_blank"
-                rel="noopener noreferrer">https://aslp-lab.github.io/SmartGlasses</a>) must be explicitly cited in the
-              acknowledgments or references.
-            </li>
-            <li class="mb-0">
-              <strong>After the official paper publication:</strong> Once the organizing committee officially publishes
-              the Overview Paper or baseline papers for the SmartGlasses Challenge, all subsequent works utilizing this
-              dataset must mandatorily cite the official paper.
-            </li>
-          </ul>
-
-          <h3 class="h5 fw-bold mb-3" style="color: #1f4385;">1.4 Rights &amp; Disclaimer</h3>
-          <ul class="mb-0" style="padding-left: 1.25rem;">
-            <li class="mb-2">
-              All intellectual property rights of the dataset belong to the SmartGlasses Challenge Organizing Committee
-              and its affiliated institutions.
-            </li>
-            <li class="mb-0">
-              The dataset is provided &quot;As is&quot;. The organizing committee makes no warranties regarding the
-              dataset&apos;s suitability for any specific scenarios and shall not be held liable for any direct or
-              indirect damages arising from the use of this data.
-            </li>
-          </ul>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="timeline-content-wrapper" data-aos="fade-up" data-aos-delay="100">
+              <p>以下为初步时间安排，后续将根据 NCMMSC 2026 官方时间线和竞赛筹备进度进行调整。</p>
+              <ul class="timeline-list-new" style="list-style: none; padding-left: 0; margin: 0;">
+                <li><strong>2026 年 4 月 30 日：</strong>NCMMSC 特殊议题征集开放。</li>
+                <li><strong>2026 年 6 月 15 日：</strong>特殊议题申请截止。</li>
+                <li><strong>2026 年 6 月 22 日：</strong>特殊议题接受通知，挑战赛官网发布与报名开放，开源数据表公布，竞赛训练集发布。</li>
+                <li><strong>2026 年 6 月 29 日：</strong>开源数据表停止更新数据。</li>
+                <li><strong>2026 年 7 月 12 日：</strong>测试集发布。</li>
+                <li><strong>2026 年 7 月 22 日：</strong>竞赛结束，排行榜冻结，核实成绩后发布最终排行榜。</li>
+                <li><strong>2026 年 7 月 31 日：</strong>竞赛相关论文投稿截止。</li>
+                <li><strong>2026 年 11 月 5-8 日：</strong>NCMMSC 2026 将于珠海横琴举行，挑战赛专题报告和优秀队伍交流活动计划在会议期间举行。</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <!-- End License Section -->
 
+    <section id="leaderboard" class="leaderboard section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>排行榜</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up">
+            <div class="info-card text-center">
+              <h3>公开数据排行榜</h3>
+              <p class="mb-0">待竞赛提交开启后公布，用于最终正式排名与奖项评定。</p>
+            </div>
+          </div>
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-card text-center">
+              <h3>开放数据排行榜</h3>
+              <p class="mb-0">待竞赛提交开启后公布，用于展示不同数据条件下的系统性能上限。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- End Services Section -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>常见问题</h2>
+        </div>
 
-    <!-- ======= Organizers Section (纯文本版) ======= -->
+        <div class="row">
+          <div class="col-lg-12" data-aos="fade-up">
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：可以只参加一个任务吗？</p>
+              <p>A：可以。参赛队伍可根据自身研究方向选择参加方言识别任务、语音识别任务，或同时参加两个任务。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：公开数据排行榜和开放数据排行榜有什么区别？</p>
+              <p>A：公开数据排行榜用于正式排名和奖项评定，数据与模型使用范围受限；开放数据排行榜主要用于探索性能上限，允许使用更多合法数据资源，但需要披露来源和使用方式。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：是否可以使用公开预训练模型？</p>
+              <p>A：可以。公开数据排行榜中允许使用公开可获得、可复现的预训练模型；所有外部资源、数据增强方法和后处理策略均需在系统说明中明确列出。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：评测集标签会公开吗？</p>
+              <p>A：不会。评测集标签不公开，将用于最终排行榜和系统排名。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="license" class="license section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>数据使用规则</h2>
+        </div>
+
+        <div class="content rich-text" data-aos="fade-up">
+          <h3 class="h5">公开数据清单与数据登记机制</h3>
+          <p>
+            组织方将建立“中文方言语音开源数据公共清单”，列出参赛者可以使用的公开数据资源，包括数据名称、语种/方言类别、数据规模、许可协议、下载地址和适用任务等信息。
+          </p>
+          <p>
+            若参赛队伍使用未在公共清单中的公开数据，可向组织方提交数据登记申请。经确认该数据为公开可获得、合法可使用且符合竞赛规则后，该数据将被补充到公共清单中，供其他参赛队伍参考。
+          </p>
+
+          <h3 class="h5 mt-4">提交材料与合规检查</h3>
+          <p class="mb-0">
+            所有参赛队伍在提交系统结果时，均需提交数据使用声明，说明所使用的训练数据、外部数据、预训练模型、数据增强方法和后处理策略。对于公开数据排行榜，组织方将对数据使用情况进行合规性检查；对于开放数据排行榜，参赛队伍需尽可能披露数据来源、规模和类别覆盖情况，以便后续进行公平分析和结果解释。
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section class="organizers bg-light py-5" id="organizers">
       <div class="container">
         <div class="section-title text-center mb-5" data-aos="fade-up">
-          <h2 class="font-weight-bold" style="font-size: 36px; color: #1f4385;">Organizers</h2>
+          <h2>组织者</h2>
         </div>
 
-        <!-- 每行最多显示 6 人，无卡片样式，仅文本 -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-4 justify-content-center">
-
-          <!-- Lei Xie -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="100">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Lei Xie</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 justify-content-center">
+          <div class="col text-center" data-aos="zoom-in">
+            <div class="organizer-name">谢磊</div>
+            <div class="organizer-role">教授，西北工业大学</div>
           </div>
-
-          <!-- Longshuai Xiao -->
+          <div class="col text-center" data-aos="zoom-in" data-aos-delay="50">
+            <div class="organizer-name">薛浏蒙</div>
+            <div class="organizer-role">助理教授，南京大学</div>
+          </div>
+          <div class="col text-center" data-aos="zoom-in" data-aos-delay="100">
+            <div class="organizer-name">刘和鑫</div>
+            <div class="organizer-role">博士后，南洋理工大学</div>
+          </div>
           <div class="col text-center" data-aos="zoom-in" data-aos-delay="150">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Longshuai Xiao
-              </h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Huawei, China</span>
-            </div>
+            <div class="organizer-name">石宪</div>
+            <div class="organizer-role">音频研究，千问实验室</div>
           </div>
-
-          <!-- Zhaohong Ni -->
-          <!-- <div class="col text-center" data-aos="zoom-in" data-aos-delay="200">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Zhaohong Ni</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Meta, USA</span>
-            </div>
-          </div> -->
-
-          <!-- Xie Chen -->
+          <div class="col text-center" data-aos="zoom-in" data-aos-delay="200">
+            <div class="organizer-name">胡婕</div>
+            <div class="organizer-role">总监，北京慧听科技有限公司</div>
+          </div>
           <div class="col text-center" data-aos="zoom-in" data-aos-delay="250">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Xie Chen</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Shanghai Jiao Tong University, China</span>
-            </div>
+            <div class="organizer-name">穆秉甡</div>
+            <div class="organizer-role">学生，西北工业大学</div>
           </div>
-
-          <!-- Jun Du -->
           <div class="col text-center" data-aos="zoom-in" data-aos-delay="300">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Jun Du</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">USTC, China</span>
-            </div>
+            <div class="organizer-name">廖育杰</div>
+            <div class="organizer-role">学生，西北工业大学</div>
           </div>
-
-          <!-- Shuai Wang -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="300">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Shuai Wang</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Nanjing University</span>
-            </div>
-          </div>
-
-          <!-- Liumeng Xue -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="300">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Liumeng Xue</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Nanjing University</span>
-            </div>
-          </div>
-
-          <!-- Eng‑Siong Chng -->
           <div class="col text-center" data-aos="zoom-in" data-aos-delay="350">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Eng‑Siong Chng
-              </h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Nanyang Technological University,
-                Singapore</span>
-            </div>
+            <div class="organizer-name">王水源</div>
+            <div class="organizer-role">学生，西北工业大学</div>
           </div>
-          <!-- Zhonghua Fu -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="100">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Zhonghua Fu</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
+        </div>
+
+        <div class="section-title text-center mt-5 mb-4" data-aos="fade-up">
+          <h2 style="font-size: 32px;">报告人</h2>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 justify-content-center">
+          <div class="col text-center">
+            <div class="organizer-name">洪青阳</div>
+            <div class="organizer-role">教授，厦门大学</div>
           </div>
-          <!-- Jun Zhou -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Jun Zhou</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Rokid,
-                China</span>
-            </div>
+          <div class="col text-center">
+            <div class="organizer-name">陈谐</div>
+            <div class="organizer-role">副教授，上海交通大学</div>
           </div>
-          <!-- Xin Xu -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="100">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Xin Xu</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">AISHELL,
-                China</span>
-            </div>
+          <div class="col text-center">
+            <div class="organizer-name">王帅</div>
+            <div class="organizer-role">副教授，南京大学</div>
           </div>
-          <!-- Hui Bu -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="100">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Hui Bu</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">AISHELL,
-                China</span>
-            </div>
+          <div class="col text-center">
+            <div class="organizer-name">胡婕</div>
+            <div class="organizer-role">总监，北京慧听科技有限公司</div>
           </div>
-
-          <!-- Zhixian Zhao -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="500">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Zhixian Zhao</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div>
-
-          <!-- Dehui Gao -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="400">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Dehui Gao</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div>
-
-          <!-- Zhaokai Sun -->
-          <!-- <div class="col text-center" data-aos="zoom-in" data-aos-delay="450">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Zhaokai Sun</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div> -->
-
-
-          <!-- Runduo Han -->
-          <!-- <div class="col text-center" data-aos="zoom-in" data-aos-delay="550">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Runduo Han</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div> -->
-
-          <!-- Yike Zhu -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Yike Zhu</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div>
-
-
-          <!-- Yuhang Dai -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Yuhang Dai</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div>
-
-          <!-- Zhennan Lin -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Zhennan Lin</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div>
-
-          <!-- Yujie Liao -->
-          <div class="col text-center" data-aos="zoom-in" data-aos-delay="600">
-            <div style="line-height: 1.4;">
-              <h4 style="font-weight: bold; color: #1f4385; font-size: 1.2rem; margin-bottom: 0.2rem;">Yujie Liao</h4>
-              <span style="color: #555; font-size: 0.85rem; display: block;">Northwestern Polytechnical University,
-                China</span>
-            </div>
-          </div>
-
-
         </div>
       </div>
     </section>
-    <!-- End Organizers Section -->
-
-
-
-
-
   </main>
-  <!-- End #main -->
 
-  <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <a href="#header" class="scrollto footer-logo"><img width="40%" src="assets/img/logo.png" alt="" /></a>
-            <h3>SLT 2026</h3>
+          <div class="col-lg-8">
+            <a href="#header" class="scrollto footer-logo"><img width="18%" src="assets/img/sinovoices-logo.png" alt="SinoVoices Challenge logo" /></a>
+            <h3>SinoVoices Challenge 2026</h3>
+            <p>Chinese Multi-Dialect Speech Recognition Challenge</p>
           </div>
         </div>
       </div>
     </div>
-    <!--  这里被注释掉了
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Intecs</span></strong>. All Rights Reserved
-      </div>
-    </div>
-    -->
   </footer>
-  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel" style="font-weight: bold;">竞赛规则</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="content px-1 rich-text" style="text-align: left;">
+            <p>所有参赛队伍需遵守挑战赛规则。组织方保留对参赛条款、数据使用规则和最终排名解释、修改与补充的权利。</p>
+
+            <h2 class="h5 fw-bold" style="color: #1f4385;">1. 公开数据排行榜</h2>
+            <ul>
+              <li>仅允许使用组织方提供的数据、明确允许使用的公开开源数据、公开预训练模型以及公开可复现的训练资源。</li>
+              <li>参赛队伍提交结果时，需要同时提交数据使用说明，列明训练数据、预训练模型、数据增强方法和外部资源。</li>
+              <li>该排行榜用于确定挑战赛最终正式排名、奖项评定和证书。</li>
+            </ul>
+
+            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">2. 开放数据排行榜</h2>
+            <ul>
+              <li>允许使用公开数据、企业内部数据、实验室自建数据或其他合法可使用的数据资源。</li>
+              <li>参赛队伍需在系统说明中明确列出所使用数据的来源、规模、类别覆盖和使用方式。</li>
+              <li>该排行榜主要用于展示统一评测集上的性能上限，不直接等同于奖金或正式排名。</li>
+            </ul>
+
+            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">3. 论文与复现</h2>
+            <ul class="mb-0">
+              <li>挑战赛系统描述论文将综合考虑论文质量和排行榜成绩。</li>
+              <li>最终奖项评定原则上以公开数据排行榜成绩为主要依据，同时综合考虑系统描述论文质量、方法创新性、实验完整性和结果可复现性。</li>
+              <li>组织方可根据需要对高排名队伍的提交材料进行合规性检查与结果核实。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary rulesBtn" data-bs-dismiss="modal">我已了解</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-
-<!-- Challenge Rules Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel"
-          style="font-family: Open Sans, sans-serif; font-weight: bold;">Challenge Rules</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="content px-1" style="font-family: Open Sans, sans-serif; text-align: left;">
-          <p class="mb-4" style="line-height: 1.65;">
-            All participating teams must strictly adhere to the following rules. The organizing committee reserves the
-            right of final interpretation and the right to disqualify any violating teams.
-          </p>
-
-          <h2 class="h5 fw-bold" style="color: #1f4385;">1.1 Model Constraints</h2>
-          <ul class="mb-4">
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>Front-end auxiliary processing:</strong> Front-end auxiliary modules (e.g., Beamforming, Voice
-              Activity Detection (VAD), Speech Separation) are permitted to enhance the input audio signal or perform
-              feature extraction.
-            </li>
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>System architecture:</strong> Participating teams may submit separate systems or models for the
-              TSA-ASR task and the SLU task (e.g., using a dedicated ASR+Diarization model such as VibeVoice-ASR for
-              the TSA-ASR task, and using another independent Audio-Language Model (ALM) specifically for the SLU task).
-              Nevertheless, we strongly encourage teams to explore unified architectures capable of handling both tasks
-              simultaneously.
-            </li>
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>TSA-ASR task constraint:</strong> Participating teams must adopt an end-to-end paradigm based on a
-              large language model architecture (e.g., sequential generation via an ALM) to jointly handle transcription
-              and speaker attribution. Solutions that rely purely on traditional &quot;fragmented small-model
-              cascades&quot; (e.g., conventional independent VAD + speaker embedding clustering + traditional
-              small-scale
-              ASR) do not align with this challenge's goal of advancing multimodal large language model frontiers.
-            </li>
-            <li class="mb-0" style="line-height: 1.65;">
-              <strong>SLU task constraint:</strong> The use of traditional text-only cascaded approaches is strictly
-              prohibited (i.e., first using an ASR model to generate plain text transcriptions, then directly feeding
-              that plain text into an independent traditional text-based Large Language Model (LLM) for reasoning). The
-              cognition and reasoning for the SLU task must be performed by a core Audio-Language Model (ALM) that can
-              directly receive and process audio-modality (or dual-modality) input, ensuring the model fully leverages
-              the raw acoustic features.
-            </li>
-          </ul>
-
-          <h2 class="h5 fw-bold" style="color: #1f4385;">1.2 Data &amp; Pre-trained Models</h2>
-          <ul class="mb-4">
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>Official Data:</strong> Teams must use the official SmartGlasses dataset for training and
-              evaluation.
-            </li>
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>External Data:</strong> Only completely open-source, free, and publicly accessible datasets (e.g.,
-              LibriSpeech) are allowed. Private or closed-source data is strictly prohibited.
-            </li>
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>Pre-trained Models:</strong> Open-source pre-trained models (e.g., Whisper, LLaMA, Qwen) are
-              permitted, provided their weights are publicly downloadable.
-            </li>
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>Data Augmentation:</strong> Acoustic augmentation, data synthesis, and multi-modal generation are
-              permitted (e.g., TTS for overlapped speech, open-source LLMs for expanding CoT trajectories). All
-              auxiliary tools/materials must be open-source and approved for academic use.
-            </li>
-            <li class="mb-0" style="line-height: 1.65;">
-              <strong>Mandatory Disclosure:</strong> All external data, pre-trained models, and augmentation strategies
-              must be explicitly detailed in the System Description Paper.
-            </li>
-          </ul>
-
-          <h2 class="h5 fw-bold" style="color: #1f4385;">1.3 Submission &amp; Reproducibility</h2>
-          <ul class="mb-0">
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>Model size limit:</strong> To ensure fairness, the total parameter count of the system used for a
-              single task is limited to the 30B level. Considering the actual sizes of commonly available open-source
-              models (e.g., 32B, 34B), the absolute hard cap is relaxed to 35B. Specifically: if you use a cascaded
-              pipeline for the TSA-ASR task, the sum of all learnable-parameter modules in the pipeline must not exceed
-              35B; if you use an ALM for the SLU task, the total parameter count of that ALM must not exceed 35B; if you
-              use a single unified model to handle both tasks simultaneously, that model must also not exceed 35B.
-            </li>
-            <li class="mb-2" style="line-height: 1.65;">
-              <strong>Official reproducibility verification:</strong> To ensure the authenticity and validity of
-              results,
-              the organizing committee will collect model weights and inference scripts from top-performing teams during
-              the final phase, and officially reproduce the submitted results on the test set to confirm the final
-              rankings.
-            </li>
-            <li class="mb-0" style="line-height: 1.65;">
-              <strong>Inference stability &amp; retry mechanism:</strong> During the official reproduction phase on the
-              test set, if a model encounters inference failures on certain data samples (e.g., program crashes or error
-              interruptions), the organizing committee will perform up to 3 inference attempts (i.e., the initial run
-              plus 2 retries on the failed data). If the model still cannot successfully produce inference results after
-              3 attempts, those data samples will be treated as invalid/prediction failures.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary rulesBtn" data-bs-dismiss="modal">Understood</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Competition Modal -->
-<div class="modal fade" id="competition" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img class="d-block mx-auto" src="./assets/img/competition.png" width="80%" alt="">
-        <div class="section-title">
-          <h4>Competition Starts on 23<sup>rd</sup> of October</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Ideathon Modal -->
-<div class="modal fade" id="ideathon" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img class="d-block mx-auto" src="./assets/img/ideathon.png" width="80%" alt="">
-        <div class="section-title">
-          <h4>Ideathon submission available on 25<sup>th</sup> of October</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Leaderboard Modal -->
-<div class="modal fade" id="leaderboard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img class="d-block mx-auto" src="./assets/img/leaderboard.png" width="80%" alt="">
-        <div class="section-title">
-          <h4>Leaderboard will be available soon</h4>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 </html>
