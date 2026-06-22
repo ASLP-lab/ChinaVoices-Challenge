@@ -628,6 +628,7 @@
               <h3>数据与工具</h3>
               <ul class="mb-0">
                 <li><strong>数据下载地址：</strong>通过邮箱发送数据下载链接。</li>
+                <li><strong>数据使用协议：</strong><a href="https://docs.qq.com/doc/DT1ZJRmxXaUNRZXNY" target="_blank" rel="noopener">查看数据使用协议</a></li>
                 <li><strong>开源数据清单：</strong><button type="button" class="open-data-trigger" data-bs-toggle="modal" data-bs-target="#openDataModal">点击查看公开数据清单</button></li>
                 <li><strong>公共数据登记表：</strong><a href="https://docs.qq.com/form/page/DT1NBWXpaVm9BanF0" target="_blank" rel="noopener">提交公开数据登记申请</a></li>
                 <li><strong>排行榜地址：</strong>待公布。</li>
@@ -661,7 +662,7 @@
               <ul class="timeline-list-new" style="list-style: none; padding-left: 0; margin: 0;">
                 <li><strong>2026 年 6 月 22 日：</strong>挑战赛官网发布，报名开放，开源数据表公布，参考数据集（Reference Set）发布。</li>
                 <li><strong>2026 年 6 月 29 日：</strong>开源数据表停止更新数据。</li>
-                <li><strong>2026 年 7 月 12 日：</strong>公开评测集（Open Evaluation Set）发布。</li>
+                <li><strong>2026 年 7 月 12 日：</strong>公开评测集（Open Evaluation Set）发布，竞赛报名截止。</li>
                 <li><strong>2026 年 7 月 22 日：</strong>基于隐藏评测集（Hidden Evaluation Set）为依据对参赛系统进行复核，排行榜冻结，核实成绩后发布最终排行榜。</li>
                 <li><strong>2026 年 7 月 31 日：</strong>竞赛相关论文投稿截止。</li>
                 <li><strong>2026 年 11 月 5-8 日：</strong>NCMMSC 2026 将于珠海横琴举行，挑战赛专题报告和优秀队伍交流活动计划在会议期间举行。</li>
@@ -730,6 +731,9 @@
         </div>
 
         <div class="content rich-text" data-aos="fade-up">
+          <p>
+            参赛队伍在下载、访问或使用挑战赛数据前，请阅读并遵守 <a href="https://docs.qq.com/doc/DT1ZJRmxXaUNRZXNY" target="_blank" rel="noopener">数据使用协议</a>。
+          </p>
           <h3 class="h5">公开数据清单与数据登记机制</h3>
           <p>
             组织方将建立“中文方言语音开源数据公共清单”，列出参赛者可以使用的公开数据资源，包括数据名称、语种/方言类别、数据规模、许可协议、下载地址和适用任务等信息。
@@ -840,10 +844,19 @@
             <ul>
               <li>允许使用公开数据、企业内部数据、实验室自建数据或其他合法可使用的数据资源。</li>
               <li>参赛队伍需在系统说明中明确列出所使用数据的来源、规模、类别覆盖和使用方式。</li>
-              <li>该排行榜主要用于展示统一公开评测条件下的性能上限，不直接等同于奖金或正式排名。</li>
+              <li>该排行榜主要用于展示统一公开评测条件下的性能上限，不直接等同于正式排名。</li>
             </ul>
 
-            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">3. 论文与复现</h2>
+            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">3. 模型与复核提交要求</h2>
+            <ul>
+              <li>参赛队伍可自由选择预训练模型、模型结构、训练策略和推理技术，但最终提交系统必须支持离线推理，即推理过程需能够在无互联网连接的环境下独立运行。</li>
+              <li>为确保比赛公平性和结果可复现性，排行榜冻结后，请各参赛队伍密切关注注册邮箱。组织方将通过邮件通知“限定数据方案”排行榜排名前列的队伍提交补充材料。</li>
+              <li>收到通知的队伍需在指定时限内提交一套完整、可独立运行的最终成果包，用于官方复核、部署和推理测试。</li>
+              <li>最终成果必须包含可复现的 Docker 容器文件，完整描述模型运行环境配置，并提供一键运行脚本 <code>run.sh</code>。</li>
+              <li>最终成果须包含模型补充说明文档 <code>readme.md</code>，说明系统组成、运行方式、复现步骤、输入输出格式以及必要的注意事项。</li>
+            </ul>
+
+            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">4. 论文与复现</h2>
             <ul class="mb-0">
               <li>挑战赛系统描述论文将综合考虑论文质量和排行榜成绩。</li>
               <li>最终奖项评定原则上以“限定数据方案”排行榜成绩为主要依据，同时综合考虑系统描述论文质量、方法创新性、实验完整性和结果可复现性。</li>
@@ -872,85 +885,66 @@
               <table class="table table-bordered table-hover align-middle open-data-table">
                 <thead>
                   <tr>
-                    <th scope="col">方言</th>
-                    <th scope="col">开源数据资源</th>
+                    <th scope="col">数据集</th>
+                    <th scope="col">数据集描述</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>安徽</td>
-                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                    <td><a href="https://github.com/tzyll/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                    <td>面向普通话及多种中文方言/次方言的语音数据资源，包含不同地区口音和方言语音。</td>
                   </tr>
                   <tr>
-                    <td>粤语</td>
-                    <td>
-                      <div class="open-data-links">
-                        <a href="https://huggingface.co/datasets/ASLP-lab/WenetSpeech-Yue" target="_blank" rel="noopener">WenetSpeech-Yue</a>
-                        <a href="https://magichub.com/datasets/guangzhou-cantonese-scripted-speech-corpus-in-the-vehicle/" target="_blank" rel="noopener">广州粤语车载场景脚本语音语料库</a>
-                        <a href="https://magichub.com/datasets/guangzhou-cantonese-conversational-speech-corpus/" target="_blank" rel="noopener">广州粤语对话语音语料库</a>
-                      </div>
-                    </td>
+                    <td><a href="https://huggingface.co/datasets/ASLP-lab/WenetSpeech-Yue" target="_blank" rel="noopener">WenetSpeech-Yue</a></td>
+                    <td>大规模粤语语音语料库，包含多领域粤语语音及相关标注信息。</td>
                   </tr>
                   <tr>
-                    <td>长沙</td>
+                    <td><a href="https://magichub.com/datasets/guangzhou-cantonese-scripted-speech-corpus-in-the-vehicle/" target="_blank" rel="noopener">广州粤语车载场景脚本语音语料库</a></td>
+                    <td>广州粤语车载场景下的脚本朗读语音数据，内容包括数字、车载命令和查询语句等。</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://magichub.com/datasets/guangzhou-cantonese-conversational-speech-corpus/" target="_blank" rel="noopener">广州粤语对话语音语料库</a></td>
+                    <td>广州粤语对话语音数据，包含特定话题下的双人对话及对应转写文本。</td>
+                  </tr>
+                  <tr>
                     <td><a href="https://magichub.com/datasets/changsha-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">长沙方言对话语音语料库</a></td>
+                    <td>长沙方言对话语音数据，包含若干话题下的方言对话及对应转写文本。</td>
                   </tr>
                   <tr>
-                    <td>潮汕</td>
                     <td><a href="https://huggingface.co/panlr/whisper-finetune-teochew" target="_blank" rel="noopener">whisper-finetune-teochew</a></td>
+                    <td>面向潮汕话/Teochew 语音识别的 Whisper 微调模型资源。</td>
                   </tr>
                   <tr>
-                    <td>东北</td>
-                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                    <td><a href="https://magichub.com/datasets/zhengzhou-dialect-scripted-speech-corpus-daily-use-sentence/" target="_blank" rel="noopener">郑州方言日常用语脚本语音语料库</a></td>
+                    <td>郑州方言日常用语脚本朗读语音数据，包含日常表达及对应转写文本。</td>
                   </tr>
                   <tr>
-                    <td>河南</td>
-                    <td>
-                      <div class="open-data-links">
-                        <a href="https://magichub.com/datasets/zhengzhou-dialect-scripted-speech-corpus-daily-use-sentence/" target="_blank" rel="noopener">郑州方言日常用语脚本语音语料库</a>
-                        <a href="https://magichub.com/datasets/zhengzhou-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">郑州方言对话语音语料库</a>
-                      </div>
-                    </td>
+                    <td><a href="https://magichub.com/datasets/zhengzhou-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">郑州方言对话语音语料库</a></td>
+                    <td>郑州方言对话语音数据，包含特定话题下的方言对话及对应转写文本。</td>
                   </tr>
                   <tr>
-                    <td>客家</td>
                     <td><a href="http://sites.google.com/nycu.edu.tw/sarc/tw-nlai/corpora" target="_blank" rel="noopener">SARC TW-NLAI Corpora</a></td>
+                    <td>台湾语言相关音资源集合，包含客家话 ASR、TTS、词典等相关资源。</td>
                   </tr>
                   <tr>
-                    <td>闽南</td>
                     <td><a href="https://huggingface.co/datasets/scbz/minspeech" target="_blank" rel="noopener">minspeech</a></td>
+                    <td>面向闽南语/南部闽语的语音语料资源，包含标注语音及相关文本信息。</td>
                   </tr>
                   <tr>
-                    <td>南昌</td>
                     <td><a href="https://magichub.com/datasets/nanchang-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">南昌方言对话语音语料库</a></td>
+                    <td>南昌方言对话语音数据，包含方言对话语音及对应转写文本。</td>
                   </tr>
                   <tr>
-                    <td>南京</td>
-                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                    <td><a href="https://huggingface.co/ASLP-lab/WSChuan-ASR" target="_blank" rel="noopener">WenetSpeech-Chuan</a></td>
+                    <td>面向四川话语音识别的模型/资源入口，关联四川话语音识别相关资源。</td>
                   </tr>
                   <tr>
-                    <td>山西</td>
-                    <td><span class="open-data-note">暂无已登记公开数据资源</span></td>
-                  </tr>
-                  <tr>
-                    <td>陕西</td>
-                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
-                  </tr>
-                  <tr>
-                    <td>山东</td>
-                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
-                  </tr>
-                  <tr>
-                    <td>四川</td>
-                    <td><a href="https://huggingface.co/ASLP-lab/WSChuan-ASR" target="_blank" rel="noopener">WSChuan-ASR</a></td>
-                  </tr>
-                  <tr>
-                    <td>吴语</td>
                     <td><a href="https://huggingface.co/datasets/ASLP-lab/WenetSpeech-Wu" target="_blank" rel="noopener">WenetSpeech-Wu</a></td>
+                    <td>大规模吴语语音语料库，覆盖多个吴语次方言并包含多维标注信息。</td>
                   </tr>
                   <tr>
-                    <td>武汉</td>
                     <td><a href="https://magichub.com/datasets/wuhan-dialect-scripted-speech-corpus-daily-use-sentence/" target="_blank" rel="noopener">武汉方言日常用语脚本语音语料库</a></td>
+                    <td>武汉方言日常用语脚本朗读语音数据，包含日常表达及对应转写文本。</td>
                   </tr>
                 </tbody>
               </table>
