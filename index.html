@@ -236,6 +236,44 @@
       color: #fff;
     }
 
+    .open-data-trigger {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: var(--sg-blue);
+      font: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .open-data-trigger:hover {
+      color: #9ed49a;
+    }
+
+    .open-data-table {
+      min-width: 760px;
+    }
+
+    .open-data-table th {
+      white-space: nowrap;
+    }
+
+    .open-data-table td:first-child {
+      color: var(--sv-blue);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .open-data-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .open-data-note {
+      color: #64748b;
+    }
+
     .timeline-content-wrapper {
       padding: 24px;
       border-radius: 8px;
@@ -257,6 +295,14 @@
     .registration-step {
       padding: 22px;
       margin-bottom: 18px;
+    }
+
+    .wechat-qr {
+      display: block;
+      width: min(220px, 100%);
+      height: auto;
+      margin: 12px 0 16px;
+      border-radius: 8px;
     }
 
     .registration-step h3,
@@ -428,7 +474,7 @@
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
             <div class="info-card">
               <h3>双排行榜机制</h3>
-              <p class="mb-0">设置公开数据排行榜和开放数据排行榜，兼顾正式排名公平性与技术探索价值。</p>
+              <p class="mb-0">设置“限定数据方案”排行榜和“开放数据方案”排行榜，兼顾正式排名公平性与技术探索价值。</p>
             </div>
           </div>
         </div>
@@ -575,23 +621,26 @@
           <div class="col-lg-12" data-aos="fade-up">
             <div class="registration-step">
               <h3>报名系统</h3>
-              <p class="mb-0">报名系统待公布。挑战赛官网发布后，将在本页面同步更新报名入口、参赛协议和队伍信息提交方式。</p>
+              <p class="mb-0">报名已开放，请填写 <a href="https://docs.qq.com/form/page/DT3ZoRWhVTmNZbHV4" target="_blank" rel="noopener">挑战赛报名表</a> 提交参赛队伍信息。</p>
             </div>
 
             <div class="registration-step">
               <h3>数据与工具</h3>
               <ul class="mb-0">
-                <li><strong>数据下载地址：</strong>待公布。</li>
+                <li><strong>数据下载地址：</strong>通过邮箱进行发送数据下载链接。</li>
+                <li><strong>开源数据清单：</strong><button type="button" class="open-data-trigger" data-bs-toggle="modal" data-bs-target="#openDataModal">点击查看公开数据清单</button></li>
+                <li><strong>公共数据登记表：</strong><a href="https://docs.qq.com/form/page/DT1NBWXpaVm9BanF0" target="_blank" rel="noopener">提交公开数据登记申请</a></li>
                 <li><strong>排行榜地址：</strong>待公布。</li>
-                <li><strong>代码仓库：</strong>待公布。后续将发布任务说明、提交格式、评测脚本、基线系统和 FAQ。</li>
+                <li><strong>代码仓库：</strong>待公布。后续将发布任务说明、提交格式、评测脚本。</li>
               </ul>
             </div>
 
             <div class="registration-step">
               <h3>联系方式</h3>
-              <p>如有问题，请联系组织方。联系方式将在报名开放时进一步更新。</p>
+              <p>赛事微信群：请扫描下方二维码加入</p>
+              <img src="assets/img/wechat.png" alt="赛事微信群二维码" class="wechat-qr" />
               <ul class="mb-0">
-                <li><a href="mailto:liaoyujie@mail.nwpu.edu.cn">liaoyujie@mail.nwpu.edu.cn</a></li>
+                <li>联系人：廖博士  <a href="mailto:liaoyujie@mail.nwpu.edu.cn">liaoyujie@mail.nwpu.edu.cn</a></li>
               </ul>
             </div>
           </div>
@@ -631,13 +680,13 @@
         <div class="row g-4">
           <div class="col-md-6" data-aos="fade-up">
             <div class="info-card text-center">
-              <h3>公开数据排行榜</h3>
+              <h3>“限定数据方案”排行榜</h3>
               <p class="mb-0">待竞赛提交开启后公布，用于最终正式排名与奖项评定。</p>
             </div>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="info-card text-center">
-              <h3>开放数据排行榜</h3>
+              <h3>“开放数据方案”排行榜</h3>
               <p class="mb-0">待竞赛提交开启后公布，用于展示不同数据条件下的系统性能上限。</p>
             </div>
           </div>
@@ -658,12 +707,12 @@
               <p>A：可以。参赛队伍可根据自身研究方向选择参加中文方言种类识别任务、中文多方言语音识别任务，或同时参加两个任务。</p>
             </div>
             <div class="faq-item">
-              <p class="fw-bold mb-1">Q：公开数据排行榜和开放数据排行榜有什么区别？</p>
-              <p>A：公开数据排行榜用于正式排名和奖项评定，数据与模型使用范围受限；开放数据排行榜主要用于探索性能上限，允许使用更多合法数据资源，但需要披露来源和使用方式。</p>
+              <p class="fw-bold mb-1">Q：“限定数据方案”排行榜和“开放数据方案”排行榜有什么区别？</p>
+              <p>A：“限定数据方案”排行榜用于正式排名和奖项评定，数据与模型使用范围受限；“开放数据方案”排行榜主要用于探索性能上限，允许使用更多合法数据资源，但需要披露来源和使用方式。</p>
             </div>
             <div class="faq-item">
               <p class="fw-bold mb-1">Q：是否可以使用公开预训练模型？</p>
-              <p>A：可以。公开数据排行榜中允许使用公开可获得、可复现的预训练模型；所有外部资源、数据增强方法和后处理策略均需在系统说明中明确列出。</p>
+              <p>A：可以。“限定数据方案”排行榜中允许使用公开可获得、可复现的预训练模型；所有外部资源、数据增强方法和后处理策略均需在系统说明中明确列出。</p>
             </div>
             <div class="faq-item">
               <p class="fw-bold mb-1">Q：参考数据集、公开评测集和隐藏评测集有什么区别？</p>
@@ -686,12 +735,12 @@
             组织方将建立“中文方言语音开源数据公共清单”，列出参赛者可以使用的公开数据资源，包括数据名称、语种/方言类别、数据规模、许可协议、下载地址和适用任务等信息。
           </p>
           <p>
-            若参赛队伍使用未在公共清单中的公开数据，可向组织方提交数据登记申请。经确认该数据为公开可获得、合法可使用且符合竞赛规则后，该数据将被补充到公共清单中，供其他参赛队伍参考。
+            若参赛队伍使用未在公共清单中的公开数据，可向组织方提交 <a href="https://docs.qq.com/form/page/DT1NBWXpaVm9BanF0" target="_blank" rel="noopener">公共数据登记表</a>。经确认该数据为公开可获得、合法可使用且符合竞赛规则后，该数据将被补充到公共清单中，供其他参赛队伍参考。
           </p>
 
           <h3 class="h5 mt-4">提交材料与合规检查</h3>
           <p class="mb-0">
-            所有参赛队伍在提交系统结果时，均需提交数据使用声明，说明所使用的训练数据、外部数据、预训练模型、数据增强方法和后处理策略。对于公开数据排行榜，组织方将对数据使用情况进行合规性检查；对于开放数据排行榜，参赛队伍需尽可能披露数据来源、规模和类别覆盖情况，以便后续进行公平分析和结果解释。
+            所有参赛队伍在提交系统结果时，均需提交数据使用声明，说明所使用的训练数据、外部数据、预训练模型、数据增强方法和后处理策略。对于“限定数据方案”排行榜，组织方将对数据使用情况进行合规性检查；对于“开放数据方案”排行榜，参赛队伍需尽可能披露数据来源、规模和类别覆盖情况，以便后续进行公平分析和结果解释。
           </p>
         </div>
       </div>
@@ -779,14 +828,14 @@
           <div class="content px-1 rich-text" style="text-align: left;">
             <p>所有参赛队伍需遵守挑战赛规则。组织方保留对参赛条款、数据使用规则和最终排名解释、修改与补充的权利。</p>
 
-            <h2 class="h5 fw-bold" style="color: #1f4385;">1. 公开数据排行榜</h2>
+            <h2 class="h5 fw-bold" style="color: #1f4385;">1. “限定数据方案”排行榜</h2>
             <ul>
               <li>仅允许使用组织方提供的数据、明确允许使用的公开开源数据、公开预训练模型以及公开可复现的训练资源。</li>
               <li>参赛队伍提交结果时，需要同时提交数据使用说明，列明训练数据、预训练模型、数据增强方法和外部资源。</li>
               <li>该排行榜用于确定挑战赛最终正式排名、奖项评定和证书。</li>
             </ul>
 
-            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">2. 开放数据排行榜</h2>
+            <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">2. “开放数据方案”排行榜</h2>
             <ul>
               <li>允许使用公开数据、企业内部数据、实验室自建数据或其他合法可使用的数据资源。</li>
               <li>参赛队伍需在系统说明中明确列出所使用数据的来源、规模、类别覆盖和使用方式。</li>
@@ -796,13 +845,119 @@
             <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">3. 论文与复现</h2>
             <ul class="mb-0">
               <li>挑战赛系统描述论文将综合考虑论文质量和排行榜成绩。</li>
-              <li>最终奖项评定原则上以公开数据排行榜成绩为主要依据，同时综合考虑系统描述论文质量、方法创新性、实验完整性和结果可复现性。</li>
+              <li>最终奖项评定原则上以“限定数据方案”排行榜成绩为主要依据，同时综合考虑系统描述论文质量、方法创新性、实验完整性和结果可复现性。</li>
               <li>组织方可根据需要对高排名队伍的提交材料进行合规性检查与结果核实。</li>
             </ul>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary rulesBtn" data-bs-dismiss="modal">我已了解</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="openDataModal" tabindex="-1" aria-labelledby="openDataModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="openDataModalLabel" style="font-weight: bold;">中文方言语音开源数据公共清单</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="content px-1 rich-text" style="text-align: left;">
+            <p>本清单列出当前挑战赛已登记的中文方言语音公开数据资源，供参赛队伍在限定数据方案中参考使用。若需登记未列入清单的公开数据，请填写 <a href="https://docs.qq.com/form/page/DT1NBWXpaVm9BanF0" target="_blank" rel="noopener">公共数据登记表</a>。清单将根据参赛队伍反馈和组织方审核结果持续更新。</p>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover align-middle open-data-table">
+                <thead>
+                  <tr>
+                    <th scope="col">方言</th>
+                    <th scope="col">开源数据资源</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>安徽</td>
+                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                  </tr>
+                  <tr>
+                    <td>粤语</td>
+                    <td>
+                      <div class="open-data-links">
+                        <a href="https://huggingface.co/datasets/ASLP-lab/WenetSpeech-Yue" target="_blank" rel="noopener">WenetSpeech-Yue</a>
+                        <a href="https://magichub.com/datasets/guangzhou-cantonese-scripted-speech-corpus-in-the-vehicle/" target="_blank" rel="noopener">广州粤语车载场景脚本语音语料库</a>
+                        <a href="https://magichub.com/datasets/guangzhou-cantonese-conversational-speech-corpus/" target="_blank" rel="noopener">广州粤语对话语音语料库</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>长沙</td>
+                    <td><a href="https://magichub.com/datasets/changsha-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">长沙方言对话语音语料库</a></td>
+                  </tr>
+                  <tr>
+                    <td>潮汕</td>
+                    <td><a href="https://huggingface.co/panlr/whisper-finetune-teochew" target="_blank" rel="noopener">whisper-finetune-teochew</a></td>
+                  </tr>
+                  <tr>
+                    <td>东北</td>
+                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                  </tr>
+                  <tr>
+                    <td>河南</td>
+                    <td>
+                      <div class="open-data-links">
+                        <a href="https://magichub.com/datasets/zhengzhou-dialect-scripted-speech-corpus-daily-use-sentence/" target="_blank" rel="noopener">郑州方言日常用语脚本语音语料库</a>
+                        <a href="https://magichub.com/datasets/zhengzhou-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">郑州方言对话语音语料库</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>客家</td>
+                    <td><a href="http://sites.google.com/nycu.edu.tw/sarc/tw-nlai/corpora" target="_blank" rel="noopener">SARC TW-NLAI Corpora</a></td>
+                  </tr>
+                  <tr>
+                    <td>闽南</td>
+                    <td><a href="https://huggingface.co/datasets/scbz/minspeech" target="_blank" rel="noopener">minspeech</a></td>
+                  </tr>
+                  <tr>
+                    <td>南昌</td>
+                    <td><a href="https://magichub.com/datasets/nanchang-dialect-conversational-speech-corpus/" target="_blank" rel="noopener">南昌方言对话语音语料库</a></td>
+                  </tr>
+                  <tr>
+                    <td>南京</td>
+                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                  </tr>
+                  <tr>
+                    <td>山西</td>
+                    <td><span class="open-data-note">暂无已登记公开数据资源</span></td>
+                  </tr>
+                  <tr>
+                    <td>陕西</td>
+                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                  </tr>
+                  <tr>
+                    <td>山东</td>
+                    <td><a href="https://huggingface.co/datasets/TwinkStart/KeSpeech" target="_blank" rel="noopener">KeSpeech</a></td>
+                  </tr>
+                  <tr>
+                    <td>四川</td>
+                    <td><a href="https://huggingface.co/ASLP-lab/WSChuan-ASR" target="_blank" rel="noopener">WSChuan-ASR</a></td>
+                  </tr>
+                  <tr>
+                    <td>吴语</td>
+                    <td><a href="https://huggingface.co/datasets/ASLP-lab/WenetSpeech-Wu" target="_blank" rel="noopener">WenetSpeech-Wu</a></td>
+                  </tr>
+                  <tr>
+                    <td>武汉</td>
+                    <td><a href="https://magichub.com/datasets/wuhan-dialect-scripted-speech-corpus-daily-use-sentence/" target="_blank" rel="noopener">武汉方言日常用语脚本语音语料库</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary rulesBtn" data-bs-dismiss="modal">关闭</button>
         </div>
       </div>
     </div>
