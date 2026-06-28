@@ -426,6 +426,7 @@
           <li><a class="nav-link scrollto" href="#registration">报名</a></li>
           <li><a class="nav-link scrollto" href="#timeline">时间线</a></li>
           <li><a class="nav-link scrollto" href="#leaderboard">排行榜</a></li>
+          <li><a class="nav-link scrollto" href="#faq">常见问题</a></li>
           <li><a class="nav-link scrollto" href="#organizers">组织者</a></li>
           <li>
             <button class="btn btn-sm rulesBtn" type="button" data-bs-toggle="modal"
@@ -675,7 +676,7 @@
     </section>
 
     <section id="leaderboard" class="leaderboard section-bg">
-      <div class="container">
+      <div class="container">参赛队伍提交的最终系统不得采用级联式模型方案完成核心任务。即不得将多个独立模型或系统按流水线方式组合，用前一模型的输出作为后一模型的输入来生成最终预测结果，例如“先进行方言识别，再根据方言类别调用不同 ASR 模型”等。最终提交系统应以单一主体模型或统一建模框架完成对应赛道任务。
         <div class="section-title" data-aos="fade-up">
           <h2>排行榜</h2>
         </div>
@@ -878,6 +879,7 @@
             <h2 class="h5 fw-bold mt-4" style="color: #1f4385;">3. 模型与复核提交要求</h2>
             <ul>
               <li>参赛队伍可自由选择预训练模型、模型结构、训练策略和推理技术，但最终提交系统必须支持离线推理，即推理过程需能够在无互联网连接的环境下独立运行。</li>
+              <li>参赛队伍提交的最终系统不得采用级联式模型方案完成核心任务。即不得将多个独立模型或系统按流水线方式组合，用前一模型的输出作为后一模型的输入来生成最终预测结果，例如“先进行方言识别，再根据方言类别调用不同 ASR 模型”等。最终提交系统应以单一主体模型或统一建模框架完成对应赛道任务。</li>
               <li>为确保比赛公平性和结果可复现性，排行榜冻结后，请各参赛队伍密切关注注册邮箱。组织方将通过邮件通知“限定数据方案”排行榜排名前列的队伍提交补充材料。</li>
               <li>收到通知的队伍需在指定时限内提交一套完整、可独立运行的最终成果包，用于官方复核、部署和推理测试。</li>
               <li>最终成果必须包含可复现的 Docker 容器文件，完整描述模型运行环境配置，并提供一键运行脚本 <code>run.sh</code>。</li>
