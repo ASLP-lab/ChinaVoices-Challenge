@@ -185,7 +185,7 @@ bash eval/eval_jsonl_with_wer_tools.sh \
 
 ### 中文多方言种类识别
 
-| 方言名称 | Accuracy |
+| 方言名称 | ChinaVoices Baseline Accuracy |
 | --- | ---: |
 | anhui（安徽） | 44.71% |
 | cantonese（粤语） | 100.00% |
