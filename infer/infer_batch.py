@@ -11,7 +11,7 @@ from qwen_asr.inference.utils import normalize_audios
 # -------------------------- 默认配置：也可以用命令行参数覆盖 --------------------------
 MODEL_NAME = "ckpt/Chinavoice_Challenge"
 ADAPTER_PATH = ""
-DATA_FILE_PATH = "data/dev_ms.jsonl"
+DATA_FILE_PATH = "data/reference_set_eval.jsonl"
 SAVE_RESULT_PATH = "outputs/pred.jsonl"
 DEVICE_MAP = "auto"       # 用多卡时建议运行前设置 CUDA_VISIBLE_DEVICES=0,1；auto 会自动切分到可见 GPU
 BATCH_SIZE = 64             # transformers backend 的实际推理 batch，OOM 就调小
@@ -88,7 +88,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Batch inference for Qwen3-ASR ms-swift JSONL data.")
     parser.add_argument("--model", default=MODEL_NAME, help="基座模型或已 merge 后的完整模型路径")
     parser.add_argument("--adapter", default=ADAPTER_PATH, help="LoRA adapter checkpoint 路径；如果模型已 merge，可设为空字符串")
-    parser.add_argument("--data", default=DATA_FILE_PATH, help="ms-swift 格式 JSONL，例如 data/dev.jsonl")
+    parser.add_argument("--data", default=DATA_FILE_PATH, help="ms-swift 格式 JSONL，例如 data/reference_set_eval.jsonl")
     parser.add_argument("--output", default=SAVE_RESULT_PATH, help="推理结果 JSONL 保存路径")
     parser.add_argument("--device-map", default=DEVICE_MAP, help="transformers device_map，常用 auto 或 cuda:0")
     parser.add_argument("--batch-size", type=int, default=BATCH_SIZE, help="推理 batch，显存不够就调小")
