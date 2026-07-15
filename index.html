@@ -191,6 +191,20 @@
       line-height: 1.85;
     }
 
+    .leaderboard-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .leaderboard-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+    }
+
     .track-card {
       overflow: hidden;
       margin-bottom: 22px;
@@ -574,7 +588,7 @@
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="info-card">
               <h3>参考与公开评测</h3>
-              <p class="mb-0">参考数据集计划为每个语种/方言提供约 3 小时语音数据；公开评测集用于阶段性提交、系统调试和结果反馈。</p>
+              <p class="mb-0">参考数据集计划为每个语种/方言提供约 3 小时语音数据；公开评测集用于参赛系统离线推理、结果提交和排行榜评测。</p>
             </div>
           </div>
           <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
@@ -636,7 +650,14 @@
                 <li><strong>数据使用协议：</strong><a href="https://docs.qq.com/doc/DT1ZJRmxXaUNRZXNY" target="_blank" rel="noopener">查看数据使用协议</a></li>
                 <li><strong>开源数据清单：</strong><button type="button" class="open-data-trigger" data-bs-toggle="modal" data-bs-target="#openDataModal">点击查看公开数据清单</button></li>
                 <li><strong>公共数据登记表：</strong><a href="https://docs.qq.com/form/page/DT1NBWXpaVm9BanF0" target="_blank" rel="noopener">提交公开数据登记申请</a></li>
-                <li><strong>排行榜地址：</strong>待公布。</li>
+                <li><strong>排行榜地址：</strong>
+                  “限定数据方案”排行榜：
+                  <a href="https://www.codabench.org/competitions/17518/#/pages-tab" target="_blank" rel="noopener">中文多方言种类识别</a>、
+                  <a href="https://www.codabench.org/competitions/17519/#/pages-tab" target="_blank" rel="noopener">中文多方言语音识别</a>；
+                  “开放数据方案”排行榜：
+                  <a href="https://www.codabench.org/competitions/17520/#/pages-tab" target="_blank" rel="noopener">中文多方言种类识别</a>、
+                  <a href="https://www.codabench.org/competitions/17521/#/pages-tab" target="_blank" rel="noopener">中文多方言语音识别</a>。
+                </li>
                 <li><strong>代码仓库：</strong><a href="https://github.com/ASLP-lab/ChinaVoices-Challenge/tree/main" target="_blank" rel="noopener noreferrer">ChinaVoices Challenge GitHub 仓库</a> 已发布。</li>
               </ul>
             </div>
@@ -697,13 +718,21 @@
           <div class="col-md-6" data-aos="fade-up">
             <div class="info-card text-center">
               <h3>“限定数据方案”排行榜</h3>
-              <p class="mb-0">待竞赛提交开启后公布，用于最终正式排名与奖项评定。</p>
+              <p class="mb-0">用于最终正式排名与奖项评定。参赛队伍可根据参加任务提交对应结果文件。</p>
+              <div class="leaderboard-links">
+                <a class="btn btn-sm rulesBtn" href="https://www.codabench.org/competitions/17518/#/pages-tab" target="_blank" rel="noopener">中文多方言种类识别</a>
+                <a class="btn btn-sm rulesBtn" href="https://www.codabench.org/competitions/17519/#/pages-tab" target="_blank" rel="noopener">中文多方言语音识别</a>
+              </div>
             </div>
           </div>
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="info-card text-center">
               <h3>“开放数据方案”排行榜</h3>
-              <p class="mb-0">待竞赛提交开启后公布，用于展示不同数据条件下的系统性能上限。</p>
+              <p class="mb-0">用于展示不同数据条件下的系统性能上限，不用于竞赛正式排名和奖项评定。</p>
+              <div class="leaderboard-links">
+                <a class="btn btn-sm rulesBtn" href="https://www.codabench.org/competitions/17520/#/pages-tab" target="_blank" rel="noopener">中文多方言种类识别</a>
+                <a class="btn btn-sm rulesBtn" href="https://www.codabench.org/competitions/17521/#/pages-tab" target="_blank" rel="noopener">中文多方言语音识别</a>
+              </div>
             </div>
           </div>
         </div>
@@ -723,6 +752,10 @@
               <p>A：可以。参赛队伍可根据自身研究方向选择参加中文多方言种类识别任务、中文多方言语音识别任务，或同时参加两个任务。</p>
             </div>
             <div class="faq-item">
+              <p class="fw-bold mb-1">Q：中文多方言种类识别和中文多方言语音识别可以使用不同的模型吗？还是必须提交一个同时支持两个任务的模型？</p>
+              <p>A：中文多方言种类识别和中文多方言语音识别可以分别使用不同的模型，也可以使用一个统一模型同时完成两个任务。参赛队伍可根据自身技术方案进行选择，但各任务的系统均须符合相应的竞赛规则和提交要求。</p>
+            </div>
+            <div class="faq-item">
               <p class="fw-bold mb-1">Q：“限定数据方案”排行榜和“开放数据方案”排行榜有什么区别？</p>
               <p>A：“限定数据方案”排行榜用于正式排名和奖项评定，数据与模型使用范围受限；“开放数据方案”排行榜主要用于探索性能上限，允许使用更多合法数据资源，但需要披露来源和使用方式。</p>
             </div>
@@ -732,7 +765,52 @@
             </div>
             <div class="faq-item">
               <p class="fw-bold mb-1">Q：参考数据集、公开评测集和隐藏评测集有什么区别？</p>
-              <p>A：参考数据集（Reference Set）将按语种/方言类别发布，计划每类约 3 小时，用于参赛队伍训练和开发；公开评测集（Open Evaluation Set）将按时间线发布，用于阶段性提交与系统调试；隐藏评测集（Hidden Evaluation Set）不公开发布，仅用于组委会对参赛系统进行独立复核与能力验证，以检查系统提交结果的有效性、稳定性和泛化表现。</p>
+              <p>A：参考数据集（Reference Set）将按语种/方言类别发布，计划每类约 3 小时，用于参赛队伍训练和开发；公开评测集（Open Evaluation Set）将按时间线发布，用于参赛系统离线推理、结果提交与排行榜评测；隐藏评测集（Hidden Evaluation Set）不公开发布，仅用于组委会对参赛系统进行独立复核与能力验证，以检查系统提交结果的有效性、稳定性和泛化表现。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：可以使用评测集进行训练吗？</p>
+              <p>A：不可以。评测集仅用于模型推理和结果评测，禁止以任何形式将评测集用于模型训练、微调或参数优化。</p>
+              <p class="mb-0">参赛队伍不得对评测集进行人工标注、伪标签生成或其他形式的标签补充后，再将其加入训练数据；也不得根据评测集内容进行针对性数据构造或模型调优。违反该规定的提交将被视为不合规。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：评测结果如何提交并进行评分？</p>
+              <p>A：组织方已发布在线排行榜平台及对应提交入口。参赛队伍需要使用自己的模型对公开评测集进行离线推理，并按照规定格式生成结果文件，随后在对应排行榜平台提交。</p>
+              <p class="mb-0">平台将根据赛事规定的评价指标对提交结果进行自动评测，并更新对应排行榜成绩。具体的文件格式、提交次数限制和操作流程请以各排行榜平台页面说明为准。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：对于参加“限定数据方案”排行榜的参赛队伍，竞赛的完整提交流程是什么？</p>
+              <p>A：竞赛提交与复核流程主要包括以下阶段：</p>
+              <ol class="mb-0">
+                <li><strong>评测结果提交：</strong>竞赛期间，参赛队伍使用参赛系统对公开评测集进行推理，并按照组织方规定的格式，在对应排行榜平台提交结果文件。平台将自动完成评测并更新排行榜成绩。</li>
+                <li><strong>参赛系统方案信息登记：</strong>所有参加“限定数据方案”排行榜的队伍，均须在竞赛截止时间前提交《ChinaVoices Challenge 参赛系统方案信息登记表》。登记表主要用于说明参赛队伍所使用的系统方案相关信息。未按时提交参赛系统方案信息登记表的队伍，其提交结果将不具备正式排名资格。</li>
+                <li><strong>排行榜冻结与队伍通知：</strong>排行榜冻结后，请各参赛队伍密切关注报名时填写的联系人邮箱。组织方将通过邮件通知“限定数据方案”排行榜中排名前列的队伍提交补充材料。</li>
+                <li><strong>成果包提交与官方复核：</strong>收到通知的队伍须在指定时间内提交一套完整、可独立运行的最终成果包，供组织方进行数据与方案合规性检查、系统部署、结果复现和推理测试。</li>
+                <li><strong>最终成果包要求：</strong>最终成果包应至少包含可复现的 Docker 容器文件及完整的运行环境配置、一键运行脚本 <code>run.sh</code>、模型权重及运行所需的相关文件、模型补充说明文档 <code>readme.md</code>，以及组织方要求提交的其他数据使用说明和合规性材料。其中 <code>readme.md</code> 应说明系统组成、运行方式、复现步骤、输入输出格式及必要的注意事项。</li>
+                <li><strong>论文邀请与投稿：</strong>竞赛结束后，组织方将综合考虑排行榜成绩、方法创新性、系统完整性和结果可复现性，邀请优秀参赛队伍按照全国人机语音通讯学术会议（NCMMSC）的论文格式要求提交系统描述论文。所提交论文须经过会议同行评审，评审通过后方可正式录用，并在会议期间进行展示与交流。</li>
+              </ol>
+              <p class="mt-3 mb-0">最终正式排名、奖项评定将以排行榜成绩为主要依据，并结合系统合规性和结果可复现性进行综合确认。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：对于仅参加“开放数据方案”排行榜的参赛队伍，竞赛的完整提交流程是什么？</p>
+              <p>A：仅参加“开放数据方案”排行榜的参赛队伍，需要按照组织方发布的提交格式，使用参赛系统对公开评测集进行推理，并在对应排行榜平台提交评测结果。</p>
+              <p>所有参加“开放数据方案”排行榜的队伍，均须在竞赛截止时间前提交《ChinaVoices Challenge 参赛系统方案信息登记表》，说明所使用的系统方案相关信息。对于企业内部数据、实验室自建数据或其他不便公开的数据，参赛队伍无需上传原始数据，但须说明其大致来源、规模、类别覆盖和使用方式。未按时提交参赛系统方案信息登记表的队伍，其结果将不予保留在最终开放数据方案排行榜中。</p>
+              <p class="mb-0">仅参加“开放数据方案”排行榜的队伍无需提交 Docker 容器、模型权重、<code>run.sh</code>、<code>readme.md</code> 等最终成果包，也不参与“限定数据方案”排行榜的官方复核流程。需要说明的是，“开放数据方案”排行榜主要用于展示不同数据条件下参赛系统在统一评测集上的性能上限，不用于竞赛正式排名、奖项评定。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：参赛队伍可以同时参加“限定数据方案”和“开放数据方案”两个排行榜吗？</p>
+              <p>A：可以。参加“限定数据方案”排行榜的队伍，可以同时参加“开放数据方案”排行榜。</p>
+              <p>同时参加两个排行榜的队伍，其成果包提交与官方复核要求按照“限定数据方案”排行榜的流程执行。排行榜冻结后，仅当队伍收到组织方通知时，才需要提交完整成果包。</p>
+              <p class="mb-0">仅参加“开放数据方案”排行榜的队伍，不可在竞赛过程中提交“限定数据方案”排行榜。因此，请各参赛队伍在提交前，根据所使用的数据资源和技术方案确认所参加的排行榜类别。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：同时参加中文多方言种类识别和中文多方言语音识别两个任务的队伍，如何填写参赛系统方案信息登记表？</p>
+              <p>A：同时参加两个任务的队伍，应根据两个任务实际使用的系统方案填写登记表。</p>
+              <p>如果两个任务使用的数据、基础模型、训练方法或整体系统方案不同，应分别填写对应的参赛系统方案信息登记表，以便组织方准确统计和审核各任务的技术方案。</p>
+              <p class="mb-0">如果两个任务由同一个统一系统完成，并且使用的数据、模型和训练方案基本一致，参赛队伍可以按照表单说明在同一份登记表中同时选择两个任务，并分别说明两个任务的输出形式、解码方式及其他差异。</p>
+            </div>
+            <div class="faq-item">
+              <p class="fw-bold mb-1">Q：可以申请多个账号向排行榜提交结果吗？</p>
+              <p class="mb-0">A：不可以。每支参赛队伍仅允许使用报名时填写的队伍联系人邮箱注册排行榜账号，且队伍、联系人邮箱与排行榜账号应保持一一对应。每支队伍最多拥有 10 次结果提交机会，不得通过注册小号、使用其他成员邮箱或申请多个账号等方式增加提交次数。若发现同一队伍使用多个账号提交，组织方有权取消相关提交成绩或参赛资格。</p>
             </div>
             <div class="faq-item">
               <p class="fw-bold mb-1">Q：是否只有取得较好名次的队伍才可以投稿挑战赛论文？挑战赛专题报告论文是否属于 CCF C 类论文？</p>
